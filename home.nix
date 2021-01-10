@@ -73,6 +73,15 @@
 
   programs.bash = {
     enable = true;
+    shellAliases = {
+      ls = "exa";
+
+      gs = "git status";
+      gco = "git checkout";
+
+      ssh-joestar = "ssh 67.205.137.3";
+      ssh-joestar-syncthing = "echo \"visit localhost:8385\" && ssh -L 8385:localhost:8384 67.205.137.3";
+    };
     bashrcExtra = ''
       eval "$(starship init bash)"
       export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'

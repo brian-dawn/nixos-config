@@ -108,6 +108,7 @@
     wget 
     vim
     nmap
+    exa
     git
     pijul
     ripgrep

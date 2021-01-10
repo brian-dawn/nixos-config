@@ -97,6 +97,13 @@
   gtk.enable = true;
   gtk.theme.name = "Numix";
   gtk.iconTheme.name = "Numix";
+  gtk.gtk3.bookmarks = [
+    "file:///home/brian/Sync"
+  ];
+  # gtk.gtk3.extraConfig = {
+  #   gtk-key-theme = "Emacs";
+  # };
+
 
   programs.home-manager = {
     enable = true;

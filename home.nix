@@ -92,6 +92,11 @@
     enable = true;
     userName = "Brian Dawn";
     userEmail = "brian.t.dawn@gmail.com";
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   gtk.enable = true;

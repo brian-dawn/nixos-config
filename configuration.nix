@@ -66,7 +66,6 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome3.enable = true;
-  
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -116,9 +115,11 @@
     starship
     htop
     croc
-    pandoc
     tealdeer
     du-dust
+
+    pandoc
+    mdbook
 
     ffmpeg
 
@@ -129,6 +130,9 @@
 
     firefox
     brave
+
+    dhall
+    #dhallToNix
 
     kitty
 

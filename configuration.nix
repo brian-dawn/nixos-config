@@ -36,13 +36,40 @@
     noto-fonts-cjk
     noto-fonts-emoji
     liberation_ttf
-    #fira-code
-    #fira-code-symbols
+
+    # Japanese fonts.
+    ipafont
+    kochi-substitute
+
     mplus-outline-fonts
     dina-font
     proggyfonts
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "SourceCodePro"]; })
   ];
+
+  fonts.fontconfig.defaultFonts = {
+    monospace = [
+      "SourceCodePro"
+      "IPAGothic"
+    ];
+    sansSerif = [
+      "DejaVu Sans"
+      "IPAPGothic"
+    ];
+    serif = [
+      "DejaVu Serif"
+      "IPAPMincho"
+    ];
+  };
+
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ /* any engine you want, for example */ anthy mozc ];
+ };
+  #programs.ibus.enable = true;
+  #programs.ibus.plugins = [ pkgs.ibus-anthy pkgs.mozc ];
+  # i18n.inputMethod.enabled = "fcitx";
+  # i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
 
   nix = {
     package = pkgs.nixFlakes;

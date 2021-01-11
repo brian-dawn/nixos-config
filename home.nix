@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.packages = [
@@ -106,13 +106,18 @@
     "file:///home/brian/Sync"
   ];
 
-
   dconf = {
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
         enable-hot-corners = false;
         gtk-key-theme = "Emacs";
+      };
+      "org/gnome/desktop/input-sources" = {
+        mru-sources = [(lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
+        sources = [(lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ])];
+        per-window = true;
+
       };
     };
   };

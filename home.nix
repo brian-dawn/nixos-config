@@ -112,6 +112,7 @@
     settings = {
       "org/gnome/desktop/interface" = {
         enable-hot-corners = false;
+        gtk-key-theme = "Emacs";
       };
     };
   };

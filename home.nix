@@ -8,6 +8,7 @@
 
   home.sessionVariables = {
     EDITOR="vim";
+    GLFW_IM_MODULE="ibus";
   };
 
   programs.kitty = {
@@ -116,7 +117,7 @@
       "org/gnome/desktop/input-sources" = {
         mru-sources = [(lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
         sources = [(lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ])];
-        per-window = true;
+        per-window = false;
 
       };
     };

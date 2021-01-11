@@ -105,9 +105,16 @@
   gtk.gtk3.bookmarks = [
     "file:///home/brian/Sync"
   ];
-  # gtk.gtk3.extraConfig = {
-  #   gtk-key-theme = "Emacs";
-  # };
+
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        enable-hot-corners = false;
+      };
+    };
+  };
 
 
   programs.home-manager = {

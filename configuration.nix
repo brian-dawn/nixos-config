@@ -44,27 +44,27 @@
     mplus-outline-fonts
     dina-font
     proggyfonts
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "SourceCodePro"]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "SourceCodePro" ]; })
   ];
 
   fonts.fontconfig.defaultFonts = {
     monospace = [
-      "SourceCodePro"
-      "IPAGothic"
+      "FiraCode"
+      #"IPAGothic"
     ];
     sansSerif = [
       "DejaVu Sans"
-      "IPAPGothic"
+      #"IPAPGothic"
     ];
     serif = [
       "DejaVu Serif"
-      "IPAPMincho"
+      #"IPAPMincho"
     ];
   };
 
   i18n.inputMethod = {
     enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [ /* any engine you want, for example */ anthy mozc ];
+    ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
  };
   #programs.ibus.enable = true;
   #programs.ibus.plugins = [ pkgs.ibus-anthy pkgs.mozc ];

@@ -16,10 +16,10 @@
 
     settings = {
       # background_opacity = "0.93";
-      font_family = "Source Code Pro";
-      bold_font = "Source Code Pro Bold";
-      italic_font = "auto";
-      bold_italic_font = "auto";
+      font_family = "FiraCode";
+      #bold_font = "FiraCode";
+      #italic_font = "auto";
+      #bold_italic_font = "auto";
       font_size = 11;
       enable_audio_bell = "no";
     };
@@ -64,7 +64,7 @@
 
   programs.starship = {
     enable = true;
-    #settings.character.success_symbol = "[何](bold green)";
+    settings.character.success_symbol = "[何](bold green)";
   };
 
   programs.fzf = {

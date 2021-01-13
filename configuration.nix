@@ -163,6 +163,9 @@
 
     kitty
 
+    # Native libs
+    librealsense
+
     docker
 
     gcc

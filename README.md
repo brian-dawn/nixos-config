@@ -17,6 +17,10 @@ Update the nix channel (for updating software):
     sudo nix-channel --update
     sudo nixos-rebuild switch
 
+Search for packages:
+
+    nix-env -qa [package-name]
+
 Cleanup stuff in the nix store:
 
     nix collect-garbage -d

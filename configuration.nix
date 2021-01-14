@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
     ];
 
@@ -44,7 +45,14 @@
     mplus-outline-fonts
     dina-font
     proggyfonts
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "SourceCodePro" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "DroidSansMono"
+        "SourceCodePro"
+        "Inconsolata"
+      ];
+    })
   ];
 
   fonts.fontconfig.defaultFonts = {
@@ -65,7 +73,7 @@
   i18n.inputMethod = {
     enabled = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
- };
+  };
   #programs.ibus.enable = true;
   #programs.ibus.plugins = [ pkgs.ibus-anthy pkgs.mozc ];
   # i18n.inputMethod.enabled = "fcitx";
@@ -76,7 +84,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-   };
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -105,10 +113,10 @@
   # Enable syncthing.
   services = {
     syncthing = {
-        enable = true;
-        user = "brian";
-        dataDir = "/home/brian/Sync";
-        configDir = "/home/brian/.config/syncthing";
+      enable = true;
+      user = "brian";
+      dataDir = "/home/brian/Sync";
+      configDir = "/home/brian/.config/syncthing";
     };
   };
 
@@ -123,15 +131,17 @@
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Dawn";
-    extraGroups = [ "wheel" "docker"];
+    extraGroups = [ "wheel" "docker" ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+    nixpkgs-fmt
     home-manager
 
-    wget 
+    wget
     vim
     nmap
     exa
@@ -158,25 +168,36 @@
     firefox
     brave
 
-    dhall
-    #dhallToNix
 
     kitty
 
-    # Native libs
+    # Misc libs/tools
     librealsense
+    openssl.dev
+    openssl
+    pkgconfig
+    llvmPackages.bintools
 
     docker
 
+    # Rust
+    rustc
+    cargo
+    rustfmt
+    rustPackages.clippy
+
+    # Other programming languages.
     gcc
     clang
-    cargo
-    rustc
     julia
     octave
     nodejs
     deno
     go
+    idris2
+    zig
+    dhall
+    ghc
 
     slack
     discord
@@ -217,4 +238,3 @@
   system.stateVersion = "20.09"; # Did you read the comment?
 
 }
-

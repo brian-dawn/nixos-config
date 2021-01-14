@@ -7,8 +7,8 @@
   ];
 
   home.sessionVariables = {
-    EDITOR="vim";
-    GLFW_IM_MODULE="ibus";
+    EDITOR = "vim";
+    GLFW_IM_MODULE = "ibus";
   };
 
   programs.kitty = {
@@ -51,9 +51,7 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [ vim-surround ];
-    settings = {
-      
-    };
+    settings = { };
     extraConfig = ''
       set tabstop=4
       set shiftwidth=4
@@ -115,8 +113,8 @@
         gtk-key-theme = "Emacs";
       };
       "org/gnome/desktop/input-sources" = {
-        mru-sources = [(lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
-        sources = [(lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ])];
+        mru-sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
+        sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
         per-window = false;
 
       };

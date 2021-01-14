@@ -16,11 +16,11 @@
 
     settings = {
       # background_opacity = "0.93";
-      font_family = "FiraCode";
+      font_family = "Inconsolata";
       #bold_font = "FiraCode";
       #italic_font = "auto";
       #bold_italic_font = "auto";
-      font_size = 11;
+      font_size = 9;
       enable_audio_bell = "no";
     };
   };

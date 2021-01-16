@@ -50,13 +50,17 @@
 
   programs.vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-surround ];
+    plugins = with pkgs.vimPlugins; [ vim-surround fzf-vim ];
     settings = { };
     extraConfig = ''
       set tabstop=4
       set shiftwidth=4
       set expandtab
       syntax on
+      " Open files in horizontal split
+      nnoremap <silent> <c-p> :call fzf#run({
+      \   'down': '40%',
+      \   'sink': 'botright split' })<CR>
     '';
   };
 

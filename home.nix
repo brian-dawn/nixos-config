@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, nixpkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = [
     pkgs.htop
     pkgs.fortune
@@ -16,7 +18,7 @@
 
     settings = {
       # background_opacity = "0.93";
-      font_family = "Inconsolata";
+      font_family = "Jetbrains Mono";
       #bold_font = "FiraCode";
       #italic_font = "auto";
       #bold_italic_font = "auto";
@@ -34,6 +36,31 @@
     extraPackages = epkgs: [
       epkgs.nix-mode
       epkgs.magit
+    ];
+  };
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode;
+    userSettings = {
+      "editor.fontFamily" = "Jetbrains Mono";
+    };
+    extensions = with pkgs.vscode-extensions; [
+        vscodevim.vim
+        ms-vsliveshare.vsliveshare
+
+        dhall.dhall-lang
+        ms-vscode.cpptools
+        bbenoist.Nix
+        justusadam.language-haskell
+        matklad.rust-analyzer
+        ms-python.python
+
+        # Themes
+        mskelton.one-dark-theme
+        #matklad.pale-fire
+        #nopjmp.fairyfloss
+        #jaredkent.laserwave
     ];
   };
 

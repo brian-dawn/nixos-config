@@ -33,6 +33,7 @@
   networking.interfaces.wlp4s0.useDHCP = true;
 
   fonts.fonts = with pkgs; [
+    jetbrains-mono
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -150,6 +151,11 @@
 
     nixpkgs-fmt
     home-manager
+
+    appimage-run
+
+    # Games
+    dwarf-fortress
 
     wget
     vim

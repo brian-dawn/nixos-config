@@ -136,7 +136,17 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = let
+
+    myPythonPackages = pythonPackages: with pythonPackages; [
+      numpy
+      pandas
+      scikitlearn
+      matplotlib
+      pytorch
+      ipython
+    ];
+    in with pkgs; [
 
     nixpkgs-fmt
     home-manager
@@ -151,9 +161,11 @@
     fzf
     starship
     htop
+    killall
     croc
     tealdeer
     du-dust
+    unzip
 
     pandoc
     mdbook
@@ -179,6 +191,9 @@
     llvmPackages.bintools
 
     docker
+
+    # Python
+    (python3.withPackages myPythonPackages)
 
     # Rust
     rustc

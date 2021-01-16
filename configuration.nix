@@ -166,6 +166,7 @@
     tealdeer
     du-dust
     unzip
+    tree
 
     pandoc
     mdbook

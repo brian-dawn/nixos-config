@@ -152,10 +152,21 @@
     nixpkgs-fmt
     home-manager
 
+    # Gnome stuff.
+    gnomeExtensions.appindicator
+    #gnomeExtensions.no-title-bar
+    gnomeExtensions.caffeine
+
     appimage-run
 
     # Games
     dwarf-fortress
+
+    openscad
+    blender
+    prusa-slicer
+
+    vlc
 
     wget
     vim
@@ -229,6 +240,8 @@
     numix-icon-theme
     numix-icon-theme-circle
   ];
+
+  services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

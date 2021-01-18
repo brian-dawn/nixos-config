@@ -36,6 +36,14 @@
     extraPackages = epkgs: [
       epkgs.nix-mode
       epkgs.magit
+      epkgs.lsp-mode
+      epkgs.paredit
+      epkgs.rainbow-delimiters
+      epkgs.smex
+
+      epkgs.cider
+      epkgs.clojure-mode
+
     ];
   };
 

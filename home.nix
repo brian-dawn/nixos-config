@@ -157,6 +157,10 @@
         per-window = false;
 
       };
+      "org/gnome/shell".enabled-extensions = [
+        pkgs.gnomeExtensions.appindicator.uuid
+        pkgs.gnomeExtensions.caffeine.uuid
+      ];
     };
   };
 

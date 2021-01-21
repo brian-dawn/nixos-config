@@ -149,7 +149,8 @@
     settings = {
       "org/gnome/desktop/interface" = {
         enable-hot-corners = false;
-        gtk-key-theme = "Emacs";
+        # gtk-key-theme = "Emacs";
+        gtk-key-theme = "Default";
       };
       "org/gnome/desktop/input-sources" = {
         mru-sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];

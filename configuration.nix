@@ -143,32 +143,44 @@
     myPythonPackages = pythonPackages: with pythonPackages; [
       numpy
       pandas
-      scikitlearn
+      #scikitlearn
       matplotlib
       pytorch
       ipython
     ];
     in with pkgs; [
 
+    # Nix stuff.
     nixpkgs-fmt
     home-manager
 
     # Gnome stuff.
+    numix-gtk-theme
+    numix-icon-theme
+    numix-icon-theme-circle
     gnomeExtensions.appindicator
     #gnomeExtensions.no-title-bar
     gnomeExtensions.caffeine
 
     appimage-run
 
+    # Cloud stuff
+    awscli2
+    google-cloud-sdk
+
     # Games
     dwarf-fortress
 
+    # 3D printing
     openscad
     blender
     prusa-slicer
 
+    # Media tools.
     vlc
+    ffmpeg
 
+    # Helpful CLI tools.
     wget
     vim
     nmap
@@ -186,16 +198,22 @@
     unzip
     tree
 
+    # Document generation.
     pandoc
     mdbook
-
-    ffmpeg
+    zola
+    hugo
 
     syncthing
 
+    # IDEs
     vscode
     emacs
+    jetbrains.clion
+    jetbrains.idea-community
+    android-studio
 
+    # Browsers.
     firefox
     brave
 
@@ -233,13 +251,11 @@
     dhall
     ghc
 
+    # Communication.
     slack
     discord
     signal-desktop
 
-    numix-gtk-theme
-    numix-icon-theme
-    numix-icon-theme-circle
   ];
 
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];

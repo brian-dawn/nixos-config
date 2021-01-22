@@ -8,6 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
+      ./local.nix
       /etc/nixos/hardware-configuration.nix
     ];
 
@@ -19,7 +20,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "elric"; # Define your hostname.
+  # networking.hostName = "pantalaimon"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.

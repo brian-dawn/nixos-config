@@ -2,6 +2,16 @@
 
 I just symlink `/etc/nixos/configuration.nix`, and `~/.config/nixpkgs/home.nix` to this repo.
 
+You also need to create a file in this repo called `local.nix`. This is where computer specific settings
+can be set. Here's the structure of it:
+
+```nix
+{
+  networking.hostName = "pantalaimon";
+}
+
+```
+
 # Tips and Tricks
 
 Re-sync system with configuration:

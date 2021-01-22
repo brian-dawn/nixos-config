@@ -7,7 +7,6 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
       ./local.nix
       /etc/nixos/hardware-configuration.nix
     ];
@@ -76,10 +75,6 @@
     enabled = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ anthy mozc ];
   };
-  #programs.ibus.enable = true;
-  #programs.ibus.plugins = [ pkgs.ibus-anthy pkgs.mozc ];
-  # i18n.inputMethod.enabled = "fcitx";
-  # i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
 
   nix = {
     package = pkgs.nixFlakes;

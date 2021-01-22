@@ -16,7 +16,8 @@
   programs.kitty = {
     enable = true;
 
-    settings = {
+    # Update the kitty theme here.
+    settings = import ./kitty-themes/zenburn.nix // {
       # background_opacity = "0.93";
       font_family = "Jetbrains Mono";
       #bold_font = "FiraCode";

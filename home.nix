@@ -85,7 +85,11 @@
 
   programs.vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-surround fzf-vim ];
+    plugins = with pkgs.vimPlugins; [ vim-surround
+                                      zig-vim
+                                      rust-vim
+                                      vim-surround
+                                      fzf-vim ];
     settings = { };
     extraConfig = ''
       set tabstop=4

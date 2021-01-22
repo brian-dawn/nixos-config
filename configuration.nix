@@ -175,9 +175,13 @@
     vlc
     ffmpeg
 
+    # Editors
+    vim
+    emacs
+    kakoune
+
     # Helpful CLI tools.
     wget
-    vim
     nmap
     exa
     git
@@ -203,7 +207,6 @@
 
     # IDEs
     vscode
-    emacs
     jetbrains.clion
     jetbrains.idea-community
     android-studio
@@ -212,8 +215,9 @@
     firefox
     brave
 
-
+    # Terminal emulators
     kitty
+    alacritty
 
     # Misc libs/tools
     librealsense
@@ -245,6 +249,13 @@
     zig
     dhall
     ghc
+    futhark
+    clojure
+    babashka
+    janet
+    crystal
+    elixir
+    pypy3
 
     # Communication.
     slack

@@ -17,7 +17,7 @@
     enable = true;
 
     # Update the kitty theme here.
-    settings = import ./kitty-themes/zenburn.nix // {
+    settings = import ./kitty-themes/fairyfloss.nix // {
       # background_opacity = "0.93";
       font_family = "Jetbrains Mono";
       #bold_font = "FiraCode";

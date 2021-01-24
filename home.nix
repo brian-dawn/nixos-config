@@ -17,7 +17,7 @@
     enable = true;
 
     # Update the kitty theme here.
-    settings = import ./kitty-themes/fairyfloss.nix // {
+    settings = import ./kitty-themes/zenburn.nix // {
       # background_opacity = "0.93";
       font_family = "Jetbrains Mono";
       #bold_font = "FiraCode";
@@ -122,8 +122,8 @@
       gs = "git status";
       gco = "git checkout";
 
-      ssh-joestar = "ssh 67.205.137.3";
-      ssh-joestar-syncthing = "echo \"visit localhost:8385\" && ssh -L 8385:localhost:8384 67.205.137.3";
+      ssh-kaisa = "ssh 104.131.83.148";
+      ssh-kaisa-syncthing = "echo \"visit localhost:8385\" && ssh -L 8385:localhost:8384 104.131.83.148";
     };
     bashrcExtra = ''
       eval "$(starship init bash)"

@@ -197,6 +197,10 @@
     unzip
     tree
 
+    # Sandboxing & Virtualization stuff.
+    docker
+    firecracker
+
     # Document generation.
     pandoc
     mdbook
@@ -226,7 +230,6 @@
     pkgconfig
     llvmPackages.bintools
 
-    docker
 
     # Python
     (python3.withPackages myPythonPackages)
@@ -255,7 +258,7 @@
     janet
     crystal
     elixir
-    pypy3
+    #pypy3
 
     # Communication.
     slack

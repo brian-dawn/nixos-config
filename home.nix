@@ -128,6 +128,9 @@
     bashrcExtra = ''
       eval "$(starship init bash)"
       export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+      if [ "{$TERM}" == "xterm-kitty" ]; then
+        alias ssh='kitty +kitten ssh'
+      fi
     '';
   };
 

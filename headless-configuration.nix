@@ -49,7 +49,7 @@
     };
 
     fail2ban = {
-	enable = true;
+      enable = true;
     };
   };
 

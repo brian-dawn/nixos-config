@@ -3,6 +3,14 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  imports = [
+    ./shared/bash.nix
+    ./shared/fzf.nix
+    ./shared/git.nix
+    ./shared/starship.nix
+    ./shared/vim.nix
+  ];
+
   home.packages = [
     pkgs.htop
     pkgs.fortune
@@ -55,21 +63,21 @@
       "editor.fontFamily" = "Jetbrains Mono";
     };
     extensions = with pkgs.vscode-extensions; [
-        vscodevim.vim
-        ms-vsliveshare.vsliveshare
+      vscodevim.vim
+      ms-vsliveshare.vsliveshare
 
-        dhall.dhall-lang
-        ms-vscode.cpptools
-        bbenoist.Nix
-        justusadam.language-haskell
-        matklad.rust-analyzer
-        ms-python.python
+      dhall.dhall-lang
+      ms-vscode.cpptools
+      bbenoist.Nix
+      justusadam.language-haskell
+      matklad.rust-analyzer
+      ms-python.python
 
-        # Themes
-        mskelton.one-dark-theme
-        #matklad.pale-fire
-        #nopjmp.fairyfloss
-        #jaredkent.laserwave
+      # Themes
+      mskelton.one-dark-theme
+      #matklad.pale-fire
+      #nopjmp.fairyfloss
+      #jaredkent.laserwave
     ];
   };
 
@@ -80,68 +88,6 @@
         settings = {
           "general.smoothScroll" = true;
         };
-      };
-    };
-  };
-
-  programs.vim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-surround
-                                      zig-vim
-                                      rust-vim
-                                      vim-surround
-                                      fzf-vim ];
-    settings = { };
-    extraConfig = ''
-      set tabstop=4
-      set shiftwidth=4
-      set expandtab
-      syntax on
-      " Open files in horizontal split
-      nnoremap <silent> <c-p> :call fzf#run({
-      \   'down': '40%',
-      \   'sink': 'botright split' })<CR>
-    '';
-  };
-
-  programs.starship = {
-    enable = true;
-    settings.character.success_symbol = "[何](bold green)";
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableBashIntegration = true;
-  };
-
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      ls = "exa";
-
-      gs = "git status";
-      gco = "git checkout";
-
-      ssh-kaisa = "ssh 104.131.83.148";
-      ssh-kaisa-syncthing = "echo \"visit localhost:8385\" && ssh -L 8385:localhost:8384 104.131.83.148";
-    };
-    bashrcExtra = ''
-      eval "$(starship init bash)"
-      export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-      export EDITOR="vim"
-      if [ "{$TERM}" == "xterm-kitty" ]; then
-        alias ssh='kitty +kitten ssh'
-      fi
-    '';
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "Brian Dawn";
-    userEmail = "brian.t.dawn@gmail.com";
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
       };
     };
   };

@@ -133,139 +133,141 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = let
+  environment.systemPackages =
+    let
 
-    myPythonPackages = pythonPackages: with pythonPackages; [
-      numpy
-      pandas
-      #scikitlearn
-      matplotlib
-      pytorch
-      ipython
+      myPythonPackages = pythonPackages: with pythonPackages; [
+        numpy
+        pandas
+        #scikitlearn
+        matplotlib
+        pytorch
+        ipython
+      ];
+    in
+    with pkgs; [
+
+      # Nix stuff.
+      nixpkgs-fmt
+      home-manager
+
+      # Gnome stuff.
+      numix-gtk-theme
+      numix-icon-theme
+      numix-icon-theme-circle
+      gnomeExtensions.appindicator
+      #gnomeExtensions.no-title-bar
+      gnomeExtensions.caffeine
+
+      appimage-run
+
+      # Cloud stuff
+      awscli2
+      google-cloud-sdk
+
+      # Games
+      dwarf-fortress
+
+      # 3D printing
+      openscad
+      blender
+      prusa-slicer
+
+      # Media tools.
+      vlc
+      ffmpeg
+
+      # Editors
+      vim
+      emacs
+      kakoune
+
+      # Helpful CLI tools.
+      wget
+      nmap
+      exa
+      git
+      pijul
+      ripgrep
+      fzf
+      starship
+      htop
+      killall
+      croc
+      tealdeer
+      du-dust
+      unzip
+      tree
+
+      # Sandboxing & Virtualization stuff.
+      docker
+      firecracker
+
+      # Document generation.
+      pandoc
+      mdbook
+      zola
+      hugo
+
+      syncthing
+
+      # IDEs
+      vscode
+      jetbrains.clion
+      jetbrains.idea-community
+      android-studio
+
+      # Browsers.
+      firefox
+      brave
+
+      # Terminal emulators
+      kitty
+      alacritty
+
+      # Misc libs/tools
+      librealsense
+      openssl.dev
+      openssl
+      pkgconfig
+      llvmPackages.bintools
+
+
+      # Python
+      (python3.withPackages myPythonPackages)
+
+      # Rust
+      rustc
+      cargo
+      rustfmt
+      rustPackages.clippy
+
+      # Other programming languages.
+      gcc
+      clang
+      julia
+      octave
+      nodejs
+      deno
+      go
+      idris2
+      zig
+      dhall
+      ghc
+      futhark
+      clojure
+      babashka
+      janet
+      crystal
+      elixir
+      #pypy3
+
+      # Communication.
+      slack
+      discord
+      signal-desktop
+
     ];
-    in with pkgs; [
-
-    # Nix stuff.
-    nixpkgs-fmt
-    home-manager
-
-    # Gnome stuff.
-    numix-gtk-theme
-    numix-icon-theme
-    numix-icon-theme-circle
-    gnomeExtensions.appindicator
-    #gnomeExtensions.no-title-bar
-    gnomeExtensions.caffeine
-
-    appimage-run
-
-    # Cloud stuff
-    awscli2
-    google-cloud-sdk
-
-    # Games
-    dwarf-fortress
-
-    # 3D printing
-    openscad
-    blender
-    prusa-slicer
-
-    # Media tools.
-    vlc
-    ffmpeg
-
-    # Editors
-    vim
-    emacs
-    kakoune
-
-    # Helpful CLI tools.
-    wget
-    nmap
-    exa
-    git
-    pijul
-    ripgrep
-    fzf
-    starship
-    htop
-    killall
-    croc
-    tealdeer
-    du-dust
-    unzip
-    tree
-
-    # Sandboxing & Virtualization stuff.
-    docker
-    firecracker
-
-    # Document generation.
-    pandoc
-    mdbook
-    zola
-    hugo
-
-    syncthing
-
-    # IDEs
-    vscode
-    jetbrains.clion
-    jetbrains.idea-community
-    android-studio
-
-    # Browsers.
-    firefox
-    brave
-
-    # Terminal emulators
-    kitty
-    alacritty
-
-    # Misc libs/tools
-    librealsense
-    openssl.dev
-    openssl
-    pkgconfig
-    llvmPackages.bintools
-
-
-    # Python
-    (python3.withPackages myPythonPackages)
-
-    # Rust
-    rustc
-    cargo
-    rustfmt
-    rustPackages.clippy
-
-    # Other programming languages.
-    gcc
-    clang
-    julia
-    octave
-    nodejs
-    deno
-    go
-    idris2
-    zig
-    dhall
-    ghc
-    futhark
-    clojure
-    babashka
-    janet
-    crystal
-    elixir
-    #pypy3
-
-    # Communication.
-    slack
-    discord
-    signal-desktop
-
-  ];
 
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
 

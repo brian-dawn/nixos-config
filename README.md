@@ -24,8 +24,7 @@ Re-sync home manager with configuration:
 
 Update the nix channel (for updating software):
 
-    sudo nix-channel --update
-    sudo nixos-rebuild switch
+    sudo nixos-rebuild switch --upgrade
 
 Search for packages:
 

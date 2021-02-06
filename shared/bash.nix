@@ -5,6 +5,7 @@
     enable = true;
     shellAliases = {
       ls = "exa";
+      ll = "exa -l";
 
       gs = "git status";
       gco = "git checkout";

@@ -4,10 +4,10 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
+    ./shared/starship.nix
     ./shared/bash.nix
     ./shared/fzf.nix
     ./shared/git.nix
-    ./shared/starship.nix
     ./shared/vim.nix
   ];
 
@@ -17,6 +17,7 @@
     pkgs.starship
     pkgs.git
     pkgs.fzf
+    pkgs.exa
   ];
 
   home.sessionVariables = {

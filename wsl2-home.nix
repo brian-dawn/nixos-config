@@ -14,6 +14,9 @@
   home.packages = [
     pkgs.htop
     pkgs.fortune
+    pkgs.starship
+    pkgs.git
+    pkgs.fzf
   ];
 
   home.sessionVariables = {

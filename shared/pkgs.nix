@@ -21,9 +21,10 @@ with pkgs; [
   nixpkgs-fmt
 
   # Editors
-  vim
+  # vim
   emacs
   kakoune
+  neovim
 
   # Python
   (python3.withPackages myPythonPackages)

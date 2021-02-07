@@ -36,6 +36,7 @@ with pkgs; [
     du-dust
     unzip
     tree
+    youtube-dl
 
     # Document generation
     pandoc

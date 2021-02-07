@@ -12,16 +12,8 @@
   ];
 
   home.packages = with pkgs; [
-    htop
-    starship
-    git
-    fzf
-    exa
-    rustup
-
-    julia
-    octave
-  ];
+    # WSL2 specific packages here.
+  ] ++ (import ./shared/pkgs.nix pkgs);
 
   home.sessionVariables = {
     EDITOR = "vim";

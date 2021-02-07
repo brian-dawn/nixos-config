@@ -11,14 +11,16 @@
     ./shared/vim.nix
   ];
 
-  home.packages = [
-    pkgs.htop
-    pkgs.fortune
-    pkgs.starship
-    pkgs.git
-    pkgs.fzf
-    pkgs.exa
-    pkgs.rustup
+  home.packages = with pkgs; [
+    htop
+    starship
+    git
+    fzf
+    exa
+    rustup
+
+    julia
+    octave
   ];
 
   home.sessionVariables = {

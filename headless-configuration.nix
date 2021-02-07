@@ -7,32 +7,11 @@
   virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [
 
-
-    nixpkgs-fmt
     home-manager
-
-    vim
-    git
-
-    wget
-    nmap
-    exa
-    git
-    pijul
-    ripgrep
-    fzf
-    starship
-    htop
-    killall
-    croc
-    tealdeer
-    du-dust
-    unzip
-    tree
 
     syncthing
 
-  ];
+  ] ++ (import ./shared/pkgs.nix pkgs);
 
   users.users.brian = {
     isNormalUser = true;

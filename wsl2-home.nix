@@ -18,10 +18,12 @@
     pkgs.git
     pkgs.fzf
     pkgs.exa
+    pkgs.rustup
   ];
 
   home.sessionVariables = {
     EDITOR = "vim";
+    WSL2 = true;
   };
 
 

@@ -1,9 +1,26 @@
 { pkgs, ... }:
 with pkgs; [
 
+    # Programming languages.
+    babashka
+    clang
+    clojure
+    crystal
+    deno
+    dhall
+    elixir
+    futhark
+    gcc
+    ghc
+    go
+    idris2
+    janet
     julia
+    nodejs
     octave
+    zig
 
+    # CLI tools.
     wget
     nmap
     exa
@@ -19,4 +36,10 @@ with pkgs; [
     du-dust
     unzip
     tree
+
+    # Document generation
+    pandoc
+    mdbook
+    zola
+    hugo
 ]

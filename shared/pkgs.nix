@@ -2,14 +2,14 @@
 with pkgs; [
 
     # Programming languages.
-    babashka
+    # babashka
     clang
-    clojure
+    # clojure
     crystal
     deno
     dhall
     elixir
-    futhark
+    # futhark
     gcc
     ghc
     go

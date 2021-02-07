@@ -10,7 +10,7 @@ with pkgs; [
     dhall
     elixir
     # futhark
-    gcc
+    # gcc
     ghc
     go
     idris2

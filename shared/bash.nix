@@ -16,7 +16,7 @@
     bashrcExtra = ''
 
       # TODO: Does this break nixos?
-      . $HOME/.nix-profile/etc/profile.d/nix.sh
+      # . $HOME/.nix-profile/etc/profile.d/nix.sh
       eval "$(starship init bash)"
       export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
       export EDITOR="vim"

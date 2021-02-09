@@ -13,7 +13,7 @@
 
   home.packages = with pkgs; [
     # Extra packages here.
-  ] ++ (import ./shared/pkgs.nix pkgs);
+  ];
 
   home.sessionVariables = {
     EDITOR = "vim";

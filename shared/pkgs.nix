@@ -47,6 +47,7 @@ with pkgs; [
   nodejs
   octave
   zig
+  jdk
 
   # CLI tools.
   wget

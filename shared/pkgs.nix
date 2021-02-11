@@ -47,7 +47,9 @@ with pkgs; [
   nodejs
   octave
   zig
-  jdk
+
+  jdk11
+  ktlint
 
   # CLI tools.
   wget

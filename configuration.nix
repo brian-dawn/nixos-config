@@ -192,10 +192,10 @@
       llvmPackages.bintools
 
       # Rust
-      rustc
-      cargo
-      rustfmt
-      rustPackages.clippy
+      # rustc
+      # cargo
+      # rustfmt
+      # rustPackages.clippy
 
 
       # Communication.

@@ -47,6 +47,7 @@ with pkgs; [
   nodejs
   octave
   zig
+  rustup
 
   jdk11
   ktlint

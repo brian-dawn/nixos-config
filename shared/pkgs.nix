@@ -32,6 +32,7 @@ with pkgs; [
   # Programming languages.
   # babashka
   clang
+  clangStdenv
   # clojure
   crystal
   deno
@@ -39,6 +40,7 @@ with pkgs; [
   elixir
   # futhark
   # gcc
+  gccStdenv
   ghc
   go
   idris2

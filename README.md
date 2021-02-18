@@ -32,7 +32,7 @@ Search for packages:
 
 Cleanup stuff in the nix store:
 
-    nix collect-garbage -d
+    nix-collect-garbage -d
 
 Format some nix files:
 

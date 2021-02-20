@@ -50,6 +50,7 @@ with pkgs; [
   octave
   zig
   rustup
+  poetry
 
   jdk11
   ktlint

@@ -12,6 +12,8 @@
 
       ssh-kaisa = "ssh 104.131.83.148";
       ssh-kaisa-syncthing = "echo \"visit localhost:8385\" && ssh -L 8385:localhost:8384 104.131.83.148";
+      ssh-kilvin="ssh kilvin.farmvision.io";
+      ssh-kvothe="ssh kilvin.farmvision.io -p 8004";
     };
     bashrcExtra = ''
 

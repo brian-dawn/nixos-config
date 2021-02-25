@@ -29,6 +29,8 @@ with pkgs; [
   # Python
   (python3.withPackages myPythonPackages)
 
+  postgresql
+
   # Programming languages.
   # babashka
   clang

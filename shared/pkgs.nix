@@ -3,6 +3,8 @@
 let
 
   myPythonPackages = pythonPackages: with pythonPackages; [
+    ec2instanceconnectcli
+
     numpy
     pandas
     #scikitlearn

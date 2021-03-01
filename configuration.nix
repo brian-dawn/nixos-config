@@ -45,6 +45,7 @@
 
     mplus-outline-fonts
     dina-font
+    fira-code
     proggyfonts
     (nerdfonts.override {
       fonts = [

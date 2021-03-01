@@ -55,30 +55,30 @@
     ];
   };
 
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode;
-    userSettings = {
-      "editor.fontFamily" = "Jetbrains Mono";
-    };
-    extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
-      ms-vsliveshare.vsliveshare
+  # programs.vscode = {
+  #   enable = true;
+  #   package = pkgs.vscode;
+  #   userSettings = {
+  #     "editor.fontFamily" = "Jetbrains Mono";
+  #   };
+  #   extensions = with pkgs.vscode-extensions; [
+  #     vscodevim.vim
+  #     ms-vsliveshare.vsliveshare
 
-      dhall.dhall-lang
-      ms-vscode.cpptools
-      bbenoist.Nix
-      justusadam.language-haskell
-      matklad.rust-analyzer
-      ms-python.python
+  #     dhall.dhall-lang
+  #     ms-vscode.cpptools
+  #     bbenoist.Nix
+  #     justusadam.language-haskell
+  #     matklad.rust-analyzer
+  #     ms-python.python
 
-      # Themes
-      mskelton.one-dark-theme
-      #matklad.pale-fire
-      #nopjmp.fairyfloss
-      #jaredkent.laserwave
-    ];
-  };
+  #     # Themes
+  #     mskelton.one-dark-theme
+  #     #matklad.pale-fire
+  #     #nopjmp.fairyfloss
+  #     #jaredkent.laserwave
+  #   ];
+  # };
 
   programs.firefox = {
     enable = true;

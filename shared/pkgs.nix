@@ -76,6 +76,7 @@ with pkgs; [
   unzip
   tree
   youtube-dl
+  fd # Alternative to find.
 
   # Document generation
   pandoc

@@ -80,16 +80,16 @@
   #   ];
   # };
 
-  programs.firefox = {
-    enable = true;
-    profiles = {
-      myprofile = {
-        settings = {
-          "general.smoothScroll" = true;
-        };
-      };
-    };
-  };
+  # programs.firefox = {
+  #   enable = true;
+  #   profiles = {
+  #     myprofile = {
+  #       settings = {
+  #         "general.smoothScroll" = true;
+  #       };
+  #     };
+  #   };
+  # };
 
   gtk.enable = true;
   gtk.theme.name = "Numix";

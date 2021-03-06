@@ -18,6 +18,7 @@ with pkgs; [
   # Cloud stuff
   awscli2
   google-cloud-sdk
+  httpie
 
   ffmpeg
   nixpkgs-fmt

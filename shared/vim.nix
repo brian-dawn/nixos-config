@@ -8,6 +8,7 @@
       rust-vim
       vim-surround
       fzf-vim
+      zig-vim
     ];
     settings = { };
     extraConfig = ''

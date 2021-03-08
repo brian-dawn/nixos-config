@@ -63,6 +63,7 @@ with pkgs; [
   # CLI tools.
   wget
   nmap
+  entr
   exa
   git
   pijul

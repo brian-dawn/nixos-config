@@ -60,7 +60,7 @@ with pkgs; [
   rustup
   poetry
 
-  zig
+  #zig
 
 
   jdk11

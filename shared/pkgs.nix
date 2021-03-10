@@ -5,15 +5,18 @@ let
   myPythonPackages = pythonPackages: with pythonPackages; [
     ec2instanceconnectcli
 
-    numpy
-    pandas
+    # numpy
+    # pandas
     #scikitlearn
-    matplotlib
-    pytorch
-    ipython
+    # matplotlib
+    # pytorch
+    # ipython
   ];
 in
 with pkgs; [
+
+  # Fix python libstdc++ issues.
+  stdenv.cc.cc.lib
 
   # Cloud stuff
   awscli2
@@ -39,9 +42,10 @@ with pkgs; [
   clang
   clangStdenv
   # clojure
-  crystal
+  # crystal
   deno
   dhall
+  dhall-lsp-server
   elixir
   # futhark
   # gcc
@@ -53,9 +57,11 @@ with pkgs; [
   julia
   nodejs
   octave
-  zig
   rustup
   poetry
+
+  zig
+
 
   jdk11
   ktlint

@@ -21,6 +21,9 @@
       # If we are on a non-nixos OS (specifically wsl2) it seems we need this:
       [[ -n $WSL2 ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh
 
+      # Add cargo but favor nix binaries first.
+      export PATH="$PATH:$HOME/.cargo/bin"
+
       eval "$(starship init bash)"
       export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
       export EDITOR="vim"

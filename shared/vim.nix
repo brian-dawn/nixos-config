@@ -3,6 +3,7 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      vim-nix
       vim-surround
       zig-vim
       rust-vim

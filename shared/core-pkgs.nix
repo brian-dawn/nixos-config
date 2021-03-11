@@ -16,7 +16,6 @@ with pkgs; [
   # Programming languages.
   deno
   dhall
-  dhall-lsp-server
   go
   nodejs
   rustup

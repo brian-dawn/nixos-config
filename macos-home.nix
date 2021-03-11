@@ -6,6 +6,7 @@
   imports = [
     ./shared/starship.nix
     ./shared/bash.nix
+    ./shared/zsh.nix
     ./shared/fzf.nix
     ./shared/git.nix
     ./shared/vim.nix
@@ -14,7 +15,9 @@
   home.packages = with pkgs; [
     # WSL2 specific packages here.
     starship
+    # bash
     fzf
+    ripgrep
     git
     exa
   ]; # ++ (import ./shared/pkgs.nix pkgs);

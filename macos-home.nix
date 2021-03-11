@@ -14,13 +14,14 @@
 
   home.packages = with pkgs; [
     # WSL2 specific packages here.
-    starship
-    # bash
-    fzf
-    ripgrep
-    git
-    exa
-  ]; # ++ (import ./shared/pkgs.nix pkgs);
+    #  starship
+    #  # bash
+    #  fzf
+    #  ripgrep
+    #  git
+    #  exa
+    #  htop
+  ] ++ (import ./shared/core-pkgs.nix pkgs);
 
   home.sessionVariables = {
     EDITOR = "vim";

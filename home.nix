@@ -7,6 +7,7 @@
     ./shared/bash.nix
     ./shared/fzf.nix
     ./shared/git.nix
+    ./shared/kitty.nix
     ./shared/starship.nix
     ./shared/vim.nix
   ];
@@ -18,21 +19,6 @@
   home.sessionVariables = {
     EDITOR = "vim";
     GLFW_IM_MODULE = "ibus";
-  };
-
-  programs.kitty = {
-    enable = true;
-
-    # Update the kitty theme here.
-    settings = import ./kitty-themes/japanesque.nix // {
-      # background_opacity = "0.93";
-      font_family = "Jetbrains Mono";
-      #bold_font = "FiraCode";
-      #italic_font = "auto";
-      #bold_italic_font = "auto";
-      font_size = 9;
-      enable_audio_bell = "no";
-    };
   };
 
   services.syncthing = {

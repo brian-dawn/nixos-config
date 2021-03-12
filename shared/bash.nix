@@ -22,7 +22,7 @@
 
       # If we are on a non-nixos OS (specifically wsl2) it seems we need this:
       [[ -n $WSL2 ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh
-      [[ -n $MACOS ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh ; eval "$(/opt/homebrew/bin/brew shellenv)"
+      [[ -n $MACOS ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh && eval "$(/opt/homebrew/bin/brew shellenv)"
 
       # Add cargo but favor nix binaries first.
       export PATH="$PATH:$HOME/.cargo/bin"

@@ -13,19 +13,12 @@
   ];
 
   home.packages = with pkgs; [
-    # WSL2 specific packages here.
-    #  starship
-    #  # bash
-    #  fzf
-    #  ripgrep
-    #  git
-    #  exa
-    #  htop
+    # macos specific packages here.
   ] ++ (import ./shared/core-pkgs.nix pkgs);
 
   home.sessionVariables = {
     EDITOR = "vim";
-    NON_NIX_OS = true; # TODO rename this since we need this on macos as well.
+    NON_NIX_OS = true;
     MACOS = true;
   };
 

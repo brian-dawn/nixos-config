@@ -12,6 +12,8 @@
     ./shared/zsh.nix
   ];
 
+  programs.kitty.settings.font_size = 13;
+
   home.packages = with pkgs; [
     # macos specific packages here.
   ] ++ (import ./shared/core-pkgs.nix pkgs);

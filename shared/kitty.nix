@@ -10,7 +10,6 @@
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
-      font_size = 13;
       enable_audio_bell = "no";
       macos_option_as_alt = true;
     };

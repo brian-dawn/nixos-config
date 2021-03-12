@@ -4,6 +4,8 @@
   programs.bash = {
     enable = true;
     shellAliases = {
+
+      less = "less -R";
       ls = "exa";
       ll = "exa -l";
 

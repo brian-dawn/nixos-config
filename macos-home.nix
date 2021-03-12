@@ -26,7 +26,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
     NON_NIX_OS = true; # TODO rename this since we need this on macos as well.
-    MACOS = true; 
+    MACOS = true;
   };
 
   programs.kitty = {

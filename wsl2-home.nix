@@ -17,7 +17,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
-    WSL2 = true;
+    NON_NIX_OS = true;
   };
 
 

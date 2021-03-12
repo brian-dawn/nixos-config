@@ -25,7 +25,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
-    WSL2 = true; # TODO rename this since we need this on macos as well.
+    NON_NIX_OS = true; # TODO rename this since we need this on macos as well.
     MACOS = true; 
   };
 

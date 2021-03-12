@@ -7,6 +7,6 @@
     initExtra = ''
       [[ -n $NON_NIX_OS ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh
       eval "$(starship init zsh)"
-    '' + import ./shell-extras.nix;
+    '' + builtins.readFile ./shell-extras.sh;
   };
 }

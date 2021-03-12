@@ -21,6 +21,7 @@ with pkgs; [
   # Cloud stuff
   awscli2
   google-cloud-sdk
+  heroku
   httpie
 
   ffmpeg
@@ -74,4 +75,4 @@ with pkgs; [
   mdbook
   zola
   hugo
-] ++ (import ./shared/pkgs.nix pkgs)
+] ++ (import ./core-pkgs.nix pkgs)

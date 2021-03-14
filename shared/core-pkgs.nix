@@ -20,6 +20,7 @@ with pkgs; [
   nodejs
   rustup
   poetry
+  cmake
 
   # CLI tools.
   wget

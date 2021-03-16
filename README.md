@@ -12,6 +12,14 @@ can be set. Here's the structure of it:
 
 ```
 
+# Shell stuff
+
+Fuzzy search through history with `C-r`.
+
+Fuzzy insert a file name with `C-t`.
+
+Fuzzy cd with `M-c`.
+
 # Tips and Tricks
 
 Re-sync system with configuration:

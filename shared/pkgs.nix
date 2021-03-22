@@ -43,7 +43,8 @@ with pkgs; [
   clang
   clangStdenv
   # clojure
-  # crystal
+  crystal
+  nim
   deno
   dhall
   dhall-lsp-server

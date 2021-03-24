@@ -11,6 +11,10 @@
       # Make tab completion behave a bit more like bash.
       setopt autolist
       unsetopt menucomplete
+
+      # Make word boundaries behave like bash for M-d and M-backspace.
+      autoload -U select-word-style
+      select-word-style bash
     '' + builtins.readFile ./shell-extras.sh;
   };
 }

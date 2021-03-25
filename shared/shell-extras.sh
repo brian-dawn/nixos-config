@@ -9,6 +9,12 @@ bindkey -e
 # Favor rust over others
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Disable C-s locking the shell.
+if [[ -t 0 && $- = *i* ]]
+then
+    stty -ixon
+fi 
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export EDITOR="vim"
 if [ "{$TERM}" = "xterm-kitty" ]; then

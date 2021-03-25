@@ -3,8 +3,6 @@
 
 [[ -n $MACOS ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Emacs style.
-bindkey -e
 
 # Favor rust over others
 export PATH="$HOME/.cargo/bin:$PATH"

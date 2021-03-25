@@ -8,6 +8,9 @@
       [[ -n $NON_NIX_OS ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh
       eval "$(starship init zsh)"
 
+      # Emacs style.
+      bindkey -e
+
       # Make tab completion behave a bit more like bash.
       setopt autolist
       unsetopt menucomplete

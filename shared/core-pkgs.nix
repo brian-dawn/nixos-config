@@ -36,6 +36,7 @@ with pkgs; [
   tealdeer
   du-dust
   unzip
+  tmux
   tree
   fd # Alternative to find.
 ]

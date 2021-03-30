@@ -13,6 +13,9 @@ with pkgs; [
 
   postgresql
 
+  # Github cli tool.
+  gh
+
   # Programming languages.
   deno
   dhall

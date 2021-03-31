@@ -5,6 +5,7 @@
   ];
 
   virtualisation.docker.enable = true;
+
   environment.systemPackages = with pkgs; [
 
     home-manager
@@ -25,6 +26,10 @@
       user = "brian";
       dataDir = "/home/brian/Sync";
       configDir = "/home/brian/.config/syncthing";
+    };
+
+    ipfs = {
+      enable = true;
     };
 
     fail2ban = {

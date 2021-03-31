@@ -117,6 +117,10 @@
       dataDir = "/home/brian/Sync";
       configDir = "/home/brian/.config/syncthing";
     };
+
+    ipfs {
+      enable = true;
+    };
   };
 
   # Enable sound.

@@ -18,6 +18,9 @@ with pkgs; [
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib
 
+  speedtest-cli
+  ipfs
+
   # Cloud stuff
   awscli2
   google-cloud-sdk

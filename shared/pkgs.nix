@@ -27,6 +27,7 @@ with pkgs; [
 
   ffmpeg
   nixpkgs-fmt
+  nixpkgs-review
 
   # Editors
   # vim

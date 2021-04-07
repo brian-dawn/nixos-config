@@ -38,6 +38,7 @@ with pkgs; [
   fzf
   starship
   htop
+  jq
   killall
   croc
   tealdeer

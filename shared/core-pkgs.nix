@@ -3,6 +3,7 @@ with pkgs; [
 
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib
+  xonsh
 
   speedtest-cli
   ipfs

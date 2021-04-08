@@ -4,6 +4,7 @@ with pkgs; [
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib
   # xonsh
+  neofetch
 
   babashka
 

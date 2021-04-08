@@ -41,7 +41,6 @@ with pkgs; [
   postgresql
 
   # Programming languages.
-  # babashka
   clang
   clangStdenv
   # clojure

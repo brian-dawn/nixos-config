@@ -3,7 +3,9 @@ with pkgs; [
 
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib
-  xonsh
+  # xonsh
+
+  babashka
 
   speedtest-cli
   ipfs

@@ -31,7 +31,6 @@ with pkgs; [
 
   # Editors
   # vim
-  emacs
   kakoune
   neovim
 

@@ -9,7 +9,11 @@
     ./shared/git.nix
     ./shared/starship.nix
     ./shared/vim.nix
+    ./shared/emacs.nix
   ];
+
+  # We want the non-gui emacs version.
+  programs.emacs.package = pkgs.emacs-nox;
 
   home.packages = with pkgs; [
     # WSL2 specific packages here.

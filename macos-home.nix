@@ -10,6 +10,7 @@
     ./shared/starship.nix
     ./shared/vim.nix
     ./shared/zsh.nix
+    ./shared/emacs.nix
   ];
 
   programs.kitty.settings.font_size = 13;

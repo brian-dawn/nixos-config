@@ -12,7 +12,7 @@
   programs.emacs = {
     enable = true;
 
-    extraPackages = epkgs: [ epkgs.emms epkgs.magit epkgs.focus epkgs.smex];
+    extraPackages = epkgs: [ epkgs.emms epkgs.magit epkgs.focus epkgs.smex epkgs.flx epkgs.flx-ido];
 
   };
 }

@@ -2,6 +2,8 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (when (display-graphic-p)
+  ;; Disable the annoying bell.
+  (setq ring-bell-function 'ignore)
   (scroll-bar-mode -1))
 
 

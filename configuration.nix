@@ -118,7 +118,7 @@
       configDir = "/home/brian/.config/syncthing";
     };
 
-    ipfs {
+    ipfs = {
       enable = true;
     };
   };

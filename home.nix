@@ -10,6 +10,7 @@
     ./shared/kitty.nix
     ./shared/starship.nix
     ./shared/vim.nix
+    ./shared/emacs.nix
   ];
 
   home.packages = with pkgs; [

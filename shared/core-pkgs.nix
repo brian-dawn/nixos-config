@@ -6,6 +6,9 @@ with pkgs; [
   # xonsh
   neofetch
 
+  gdb
+  lldb
+
   babashka
 
   speedtest-cli

@@ -157,6 +157,8 @@
 
       appimage-run
 
+      qemu
+      qemu-utils
 
       # Games
       dwarf-fortress

@@ -7,7 +7,7 @@ with pkgs; [
   neofetch
 
   gdb
-  lldb
+  # lldb
 
   babashka
 

@@ -54,7 +54,10 @@ with pkgs; [
   # gcc
   gccStdenv
   ghc
+
   go
+  gopls
+
   idris2
   janet
   #julia

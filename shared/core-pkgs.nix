@@ -11,7 +11,7 @@ with pkgs; [
   gdb
   # lldb
 
-  babashka
+  # babashka
 
   speedtest-cli
   ipfs

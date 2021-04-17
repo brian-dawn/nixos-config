@@ -6,6 +6,8 @@ with pkgs; [
   # xonsh
   neofetch
 
+  julia
+
   gdb
   # lldb
 

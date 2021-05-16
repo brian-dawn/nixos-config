@@ -11,6 +11,7 @@
       vim-surround
       fzf-vim
       dhall-vim
+      vim-toml
 
       # Distraction free editing with :Goyo
       goyo-vim

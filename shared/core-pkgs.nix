@@ -32,6 +32,8 @@ with pkgs; [
   deno
   dhall
   go
+  nim
+  nimlsp
   nodejs
   rustup
   poetry

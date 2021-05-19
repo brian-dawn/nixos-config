@@ -32,6 +32,8 @@
   networking.interfaces.enp0s25.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
 
+  networking.firewall.enable = false;
+
   fonts.fonts = with pkgs; [
     jetbrains-mono
     noto-fonts
@@ -152,8 +154,11 @@
       #gnomeExtensions.no-title-bar
       gnomeExtensions.caffeine
 
+      obs-studio
       sway
       xorg.xeyes
+
+      motion
 
       appimage-run
 
@@ -167,6 +172,7 @@
       openscad
       blender
       prusa-slicer
+      cura
 
       # Media tools.
       vlc

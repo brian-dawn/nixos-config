@@ -7,6 +7,9 @@
 # Favor rust over others
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Favor using choosenim instead of nix packaged stuff.
+export PATH="$HOME/.nimble/bin:$PATH"
+
 # Disable C-s locking the shell.
 if [[ -t 0 && $- = *i* ]]
 then

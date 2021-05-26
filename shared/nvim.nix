@@ -29,6 +29,7 @@
       set expandtab
       syntax on
 
+
       " Turn on autocomplete
       set completeopt=menuone,noselect
 
@@ -59,7 +60,17 @@
       lua << EOF
         require'lspconfig'.pyright.setup{}
         require'lspconfig'.rust_analyzer.setup({})
-        require'lspconfig'.gopls.setup{}
+        require'lspconfig'.gopls.setup {
+          cmd = {"gopls", "serve"},
+          settings = {
+            gopls = {
+              analyses = {
+                unusedparams = true,
+              },
+              staticcheck = true,
+            },
+          },
+        }
       EOF
 
       "

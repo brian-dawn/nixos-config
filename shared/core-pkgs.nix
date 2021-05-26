@@ -4,6 +4,7 @@ with pkgs; [
   nodePackages.prettier
   # Language server stuff
   nodePackages.pyright
+  nodePackages.typescript-language-server
   rust-analyzer
   gopls
 

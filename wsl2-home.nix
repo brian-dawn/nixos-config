@@ -15,6 +15,7 @@
     ./shared/git.nix
     ./shared/starship.nix
     ./shared/vim.nix
+    ./shared/nvim.nix
     ./shared/emacs.nix
   ];
 

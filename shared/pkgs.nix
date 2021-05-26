@@ -32,7 +32,7 @@ with pkgs; [
   # Editors
   # vim
   kakoune
-  neovim
+  #neovim
 
   # Python
   (python3.withPackages myPythonPackages)

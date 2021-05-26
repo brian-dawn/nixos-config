@@ -1,6 +1,8 @@
 { pkgs, ... }:
 with pkgs; [
 
+  nodePackages.prettier
+
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib
   # xonsh

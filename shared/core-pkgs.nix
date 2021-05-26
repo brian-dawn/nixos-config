@@ -2,6 +2,8 @@
 with pkgs; [
 
   nodePackages.prettier
+  nodePackages.pyright
+  rust-analyzer
 
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib

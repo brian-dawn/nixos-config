@@ -56,7 +56,6 @@ with pkgs; [
   ghc
 
   go
-  gopls
 
   idris2
   janet

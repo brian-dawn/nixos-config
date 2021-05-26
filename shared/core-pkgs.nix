@@ -2,8 +2,10 @@
 with pkgs; [
 
   nodePackages.prettier
+  # Language server stuff
   nodePackages.pyright
   rust-analyzer
+  gopls
 
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib

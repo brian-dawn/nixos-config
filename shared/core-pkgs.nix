@@ -13,7 +13,7 @@ with pkgs; [
   # xonsh
   neofetch
 
-  julia
+  # julia
 
   gdb
   # lldb

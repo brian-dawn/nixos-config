@@ -3,6 +3,12 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
   imports = [
     ./shared/bash.nix
     ./shared/fzf.nix
@@ -10,6 +16,7 @@
     ./shared/kitty.nix
     ./shared/starship.nix
     ./shared/vim.nix
+    ./shared/nvim.nix
     ./shared/emacs.nix
   ];
 

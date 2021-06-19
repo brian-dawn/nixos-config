@@ -7,9 +7,9 @@
     (import (builtins.fetchTarball {
       url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
     })) 
-    # (self: super: {
-    #   kittySafe = pkgs.kitty.overrideAttrs (old: { NIX_CFLAGS_COMPILE = "-Wno-error -Wno-deprecated-declarations -Wnodeprecated-declarations"; });
-    # })
+    (self: super: {
+      kittySafe = pkgs.kitty.overrideAttrs (old: { NIX_CFLAGS_COMPILE = "-Wno-error -Wno-deprecated-declarations -Wnodeprecated-declarations"; });
+    })
 
   ];
 
@@ -19,7 +19,7 @@
     ./shared/fzf.nix
     ./shared/git.nix
     # ./shared/kitty.nix
-    #./shared/starship.nix
+    ./shared/starship.nix
     ./shared/vim.nix
     # ./shared/nvim.nix
     ./shared/bash.nix
@@ -33,6 +33,7 @@
   home.packages = with pkgs; [
      # macos specific packages here.
      #neovim-nightly
+     kittySafe
   ] ++ (import ./shared/core-pkgs.nix pkgs);
 
   home.sessionVariables = {

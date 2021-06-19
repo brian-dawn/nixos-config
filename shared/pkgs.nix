@@ -75,7 +75,7 @@ with pkgs; [
   pijul
 
   # Document generation
-  pandoc
+  # pandoc
   mdbook
   zola
   hugo

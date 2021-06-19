@@ -20,24 +20,24 @@ with pkgs; [
 
   # babashka
 
-  speedtest-cli
+  # speedtest-cli
   ipfs
 
   # Cloud stuff
   awscli2
-  google-cloud-sdk
+  # google-cloud-sdk
   httpie
 
-  nixpkgs-fmt
+  # nixpkgs-fmt
 
   postgresql
 
   # Github cli tool.
-  gh
+  # gh
 
   # Programming languages.
   deno
-  dhall
+  #dhall
   go
   #nim
   #nimlsp
@@ -48,14 +48,14 @@ with pkgs; [
   # CLI tools.
   wget
   nmap
-  entr
-  exa
+  # entr
+  # exa
   git
   ripgrep
   fzf
   starship
   htop
-  jq
+  # jq
   killall
   croc
   tealdeer

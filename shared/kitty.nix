@@ -4,7 +4,7 @@
     enable = true;
 
     # Update the kitty theme here.
-    settings = import ./kitty-themes/fairyfloss.nix // {
+    settings = import ./kitty-themes/japanesque.nix // {
       # background_opacity = "0.93";
       font_family = "FiraCode";
       bold_font = "auto";

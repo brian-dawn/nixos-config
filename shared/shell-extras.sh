@@ -4,7 +4,7 @@
 [[ -n $MACOS ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 unnix() {
-    export PATH=`echo ${PATH} | awk -v RS=: -v ORS=: '/nix-profile/ {next} {print}'`
+    export PATH=$(p=$(echo $PATH | tr ":" "\n" | grep -v "/.nix-profile/" | tr "\n" ":"); echo ${p%:})
 }
 
 # Favor rust over others

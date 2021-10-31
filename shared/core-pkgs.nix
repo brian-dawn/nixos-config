@@ -8,6 +8,11 @@ with pkgs; [
   rust-analyzer
   gopls
 
+  # Python
+  black
+
+  glibc
+
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib
   # xonsh
@@ -42,14 +47,14 @@ with pkgs; [
   #nim
   #nimlsp
   nodejs
-  rustup
+  # rustup
   poetry
 
   # CLI tools.
   wget
   nmap
   # entr
-  # exa
+  exa
   git
   ripgrep
   fzf

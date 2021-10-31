@@ -3,12 +3,13 @@
 
 [[ -n $MACOS ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
+unnix() {
+    export PATH=`echo ${PATH} | awk -v RS=: -v ORS=: '/nix-profile/ {next} {print}'`
+}
 
 # Favor rust over others
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Favor using choosenim instead of nix packaged stuff.
-export PATH="$HOME/.nimble/bin:$PATH"
+#export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Disable C-s locking the shell.
 if [[ -t 0 && $- = *i* ]]

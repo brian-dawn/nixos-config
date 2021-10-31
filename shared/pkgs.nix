@@ -40,7 +40,7 @@ with pkgs; [
   postgresql
 
   # Programming languages.
-  babashka
+  #babashka
   clang
   clangStdenv
   # clojure
@@ -57,12 +57,12 @@ with pkgs; [
 
   go
 
-  idris2
-  janet
+  #idris2
+  #janet
   #julia
   nodejs
   octave
-  rustup
+  # rustup
   poetry
 
   #zig
@@ -72,7 +72,7 @@ with pkgs; [
   ktlint
 
   # CLI tools.
-  pijul
+  # pijul
 
   # Document generation
   # pandoc

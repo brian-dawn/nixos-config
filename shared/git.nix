@@ -5,6 +5,9 @@
     userName = "Brian Dawn";
     userEmail = "brian.t.dawn@gmail.com";
     extraConfig = {
+      global = {
+        rerere = true;
+      };
       init = {
         defaultBranch = "main";
       };

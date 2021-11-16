@@ -11,7 +11,7 @@ with pkgs; [
   # Python
   black
 
-  glibc
+  #glibc
 
   # Fix python libstdc++ issues.
   stdenv.cc.cc.lib

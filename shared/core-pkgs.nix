@@ -70,6 +70,6 @@ with pkgs; [
   du-dust
   unzip
   tmux
-  tree
+  #tree
   fd # Alternative to find.
 ]

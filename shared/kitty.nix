@@ -4,9 +4,9 @@
     enable = true;
 
     # Update the kitty theme here.
-    settings = import ./kitty-themes/japanesque.nix // {
+    settings = import ./kitty-themes/zenburn.nix // {
       # background_opacity = "0.93";
-      font_family = "FiraCode";
+      font_family = "FiraCode Nerd Font Mono";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";

@@ -11,6 +11,8 @@ unnix() {
 #export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 
+export PATH="$PATH:$HOME/.local/bin"
+
 # Disable C-s locking the shell.
 if [[ -t 0 && $- = *i* ]]
 then

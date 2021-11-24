@@ -1,6 +1,9 @@
 { pkgs, ... }:
 with pkgs; [
 
+  # Fonts
+  nerdfonts
+
   nodePackages.prettier
   # Language server stuff
   nodePackages.pyright

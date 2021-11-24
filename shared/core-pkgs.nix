@@ -4,6 +4,8 @@ with pkgs; [
   # Fonts
   nerdfonts
 
+  tre-command
+
   nodePackages.prettier
   # Language server stuff
   nodePackages.pyright

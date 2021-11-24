@@ -4,6 +4,8 @@
   ls = "exa";
   ll = "exa -l";
 
+  tree = "tre";
+
   gs = "git status";
   gco = "git checkout";
 

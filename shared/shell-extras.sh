@@ -8,8 +8,9 @@ unnix() {
 }
 
 # Favor rust over others
-#export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/.cargo/bin"
+# export PATH="$PATH:$HOME/.cargo/bin"
+# Favor others over rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$PATH:$HOME/.local/bin"
 

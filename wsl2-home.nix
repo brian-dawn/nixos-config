@@ -1,5 +1,8 @@
 { pkgs, lib, nixpkgs, ... }:
 
+let
+  oxalica-rust = fetchTarball "https://github.com/oxalica/rust-overlay/archive/master.tar.gz";
+in
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -7,6 +10,7 @@
     (import (builtins.fetchTarball {
       url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
     }))
+    (import oxalica-rust) 
   ];
 
   imports = [
@@ -24,6 +28,11 @@
 
   home.packages = with pkgs; [
     # WSL2 specific packages here.
+    (rust-bin.stable.latest.default)
+    # (rust-bin.selectLatestNightlyWith (toolchain:
+    #     toolchain.default.override {
+    #       extensions = [ "rust-analyzer" "rust-src" "rustfmt" ];
+    # }))
   ] ++ (import ./shared/pkgs.nix pkgs);
 
   home.sessionVariables = {

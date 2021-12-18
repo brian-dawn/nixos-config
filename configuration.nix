@@ -31,48 +31,47 @@
   networking.useDHCP = false;
   networking.interfaces.enp0s25.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
+networking.firewall.enable = false;
 
-  networking.firewall.enable = false;
+  #    fonts.fonts = with pkgs; [
+  #      jetbrains-mono
+  #      noto-fonts
+  #      noto-fonts-cjk
+  #      noto-fonts-emoji
+  #      liberation_ttf
 
-  fonts.fonts = with pkgs; [
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
+  #      # Japanese fonts.
+  #      ipafont
+  #      kochi-substitute
 
-    # Japanese fonts.
-    ipafont
-    kochi-substitute
+  #      mplus-outline-fonts
+  #      dina-font
+  #      fira-code
+  #      proggyfonts
+  #      (nerdfonts.override {
+  #        fonts = [
+  #          "FiraCode"
+  #          "DroidSansMono"
+  #          "SourceCodePro"
+  #          "Inconsolata"
+  #        ];
+  #      })
+  #    ];
 
-    mplus-outline-fonts
-    dina-font
-    fira-code
-    proggyfonts
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-        "SourceCodePro"
-        "Inconsolata"
-      ];
-    })
-  ];
-
-  fonts.fontconfig.defaultFonts = {
-    monospace = [
-      "FiraCode"
-      #"IPAGothic"
-    ];
-    sansSerif = [
-      "DejaVu Sans"
-      #"IPAPGothic"
-    ];
-    serif = [
-      "DejaVu Serif"
-      #"IPAPMincho"
-    ];
-  };
+  #    fonts.fontconfig.defaultFonts = {
+  #      monospace = [
+  #        "FiraCode"
+  #        #"IPAGothic"
+  #      ];
+  #      sansSerif = [
+  #        "DejaVu Sans"
+  #        #"IPAPGothic"
+  #      ];
+  #      serif = [
+  #        "DejaVu Serif"
+  #        #"IPAPMincho"
+  #      ];
+  #    };
 
   i18n.inputMethod = {
     enabled = "ibus";
@@ -99,9 +98,15 @@
 
   # Enable the GNOME 3 Desktop Environment.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome3.enable = true;
+  # services.xserver.displayManager.gdm.wayland = true;
+  # services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.desktopManager.mate.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
+
+  services.xserver.displayManager.defaultSession = "sway";
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -129,14 +134,12 @@
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Dawn";
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "video" "wheel" "docker" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -145,64 +148,66 @@
     with pkgs; [
 
       home-manager
+      #networkmanager
 
       # Gnome stuff.
-      numix-gtk-theme
-      numix-icon-theme
-      numix-icon-theme-circle
-      gnomeExtensions.appindicator
-      #gnomeExtensions.no-title-bar
-      gnomeExtensions.caffeine
+      #  numix-gtk-theme
+      #  numix-icon-theme
+      #  numix-icon-theme-circle
+      #  gnomeExtensions.appindicator
+      #  #gnomeExtensions.no-title-bar
+      #  gnomeExtensions.caffeine
 
-      obs-studio
-      sway
-      xorg.xeyes
+      #  obs-studio
+      # sway
+      #  xorg.xeyes
 
       motion
 
-      appimage-run
+      #appimage-run
 
-      qemu
-      qemu-utils
+      #  qemu
+      #  qemu-utils
 
       # Games
-      dwarf-fortress
+      #  dwarf-fortress
 
       # 3D printing
-      openscad
-      blender
-      prusa-slicer
-      cura
+      #  openscad
+      #  blender
+      #  prusa-slicer
+      #  cura
 
       # Media tools.
       vlc
 
       # Sandboxing & Virtualization stuff.
       docker
-      firecracker
+      #  firecracker
 
       syncthing
 
       # IDEs
-      vscode
+      # vscode
       # jetbrains.clion
       # jetbrains.idea-community
       # android-studio
 
       # Browsers.
       firefox
-      brave
+      # brave
 
       # Terminal emulators
       kitty
       alacritty
 
+      # networkmanager
       # Misc libs/tools
-      librealsense
-      openssl.dev
-      openssl
-      pkgconfig
-      llvmPackages.bintools
+      #   librealsense
+      #   openssl.dev
+      #   openssl
+      #   pkgconfig
+      #   llvmPackages.bintools
 
       # Rust
       # rustc
@@ -212,13 +217,18 @@
 
 
       # Communication.
-      slack
-      discord
-      signal-desktop
+      #   slack
+      #   discord
+      #   signal-desktop
+      wl-clipboard
+      brightnessctl
 
     ] ++ (import ./shared/pkgs.nix pkgs);
 
-  services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
+  # Exclude a bunch of garbage.
+  environment.gnome.excludePackages = [ pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music pkgs.gnome.gnome-terminal pkgs.gnome.gedit pkgs.epiphany pkgs.evince pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour ];
+
+  # services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -227,8 +237,24 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
+  # networking.wireless.enable = true;
+  networking.networkmanager.enable = true;
   # List services that you want to enable:
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true; # so that gtk works properly
+    extraPackages = with pkgs; [
+      swaylock
+      swayidle
+      wl-clipboard
+      mako # notification daemon
+      alacritty # Alacritty is the default terminal in the config
+      dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
+    ];
+  };
+
+  # or
+  programs.light.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

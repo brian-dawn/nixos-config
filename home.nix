@@ -17,11 +17,12 @@
     ./shared/starship.nix
     ./shared/vim.nix
     ./shared/nvim.nix
-    ./shared/emacs.nix
+  #  ./shared/emacs.nix
   ];
 
   home.packages = with pkgs; [
     # Extra packages here.
+    wofi
   ];
 
   home.sessionVariables = {
@@ -29,25 +30,25 @@
     GLFW_IM_MODULE = "ibus";
   };
 
-  services.syncthing = {
-    enable = true;
-  };
+  #  services.syncthing = {
+  #    enable = true;
+  #  };
 
-  programs.emacs = {
-    enable = true;
-    extraPackages = epkgs: [
-      epkgs.nix-mode
-      epkgs.magit
-      epkgs.lsp-mode
-      epkgs.paredit
-      epkgs.rainbow-delimiters
-      epkgs.smex
+  # programs.emacs = {
+  #   enable = true;
+  #   extraPackages = epkgs: [
+  #     epkgs.nix-mode
+  #     epkgs.magit
+  #     epkgs.lsp-mode
+  #     epkgs.paredit
+  #     epkgs.rainbow-delimiters
+  #     epkgs.smex
 
-      epkgs.cider
-      epkgs.clojure-mode
+  #     epkgs.cider
+  #     epkgs.clojure-mode
 
-    ];
-  };
+  #   ];
+  # };
 
   programs.kitty.settings.font_size = 9;
 
@@ -87,37 +88,48 @@
   #   };
   # };
 
-  gtk.enable = true;
-  gtk.theme.name = "Numix";
-  gtk.iconTheme.name = "Numix";
-  gtk.gtk3.bookmarks = [
-    "file:///home/brian/Sync"
-  ];
-
-  dconf = {
+  wayland.windowManager.sway = {
     enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        enable-hot-corners = false;
-        # gtk-key-theme = "Emacs";
-        gtk-key-theme = "Default";
-      };
-      "org/gnome/desktop/input-sources" = {
-        mru-sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
-        sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
-        per-window = false;
-
-      };
-      "org/gnome/shell".enabled-extensions = [
-        pkgs.gnomeExtensions.appindicator.uuid
-        pkgs.gnomeExtensions.caffeine.uuid
-      ];
+    wrapperFeatures.gtk = true ;
+    config = {
+      modifier="Mod4";
+      terminal="kitty";
+      menu="wofi --show=drun";
     };
+    extraConfig = ''
+input "type:keyboard" {
+  xkb_options ctrl:nocaps
+}'';
   };
+
+  #    gtk.enable = true; gtk.theme.name = "Numix"; gtk.iconTheme.name = "Numix";
+  #    gtk.gtk3.bookmarks = [
+  #      "file:///home/brian/Sync"
+  #    ];
+
+  #    dconf = {
+  #      enable = true;
+  #      settings = {
+  #        "org/gnome/desktop/interface" = {
+  #          enable-hot-corners = false;
+  #          # gtk-key-theme = "Emacs";
+  #          gtk-key-theme = "Default";
+  #        };
+  #        "org/gnome/desktop/input-sources" = {
+  #          mru-sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
+  #          sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "us" ]) (lib.hm.gvariant.mkTuple [ "ibus" "mozc-jp" ]) ];
+  #          per-window = false;
+
+  #        };
+  #        "org/gnome/shell".enabled-extensions = [
+  #          pkgs.gnomeExtensions.appindicator.uuid
+  #          pkgs.gnomeExtensions.caffeine.uuid
+  #        ];
+  #      };
+  #    };
 
 
   programs.home-manager = {
     enable = true;
     path = "…";
-  };
-}
+  }; }

@@ -22,7 +22,12 @@
 
   home.packages = with pkgs; [
     # Extra packages here.
+    qutebrowser
+    swaybg
     wofi
+    mpd
+    pavucontrol
+    font-awesome # Needed for waybar icons.
   ];
 
   home.sessionVariables = {
@@ -77,24 +82,62 @@
   #   ];
   # };
 
-  # programs.firefox = {
-  #   enable = true;
-  #   profiles = {
-  #     myprofile = {
-  #       settings = {
-  #         "general.smoothScroll" = true;
-  #       };
-  #     };
-  #   };
-  # };
+  programs.firefox = {
+    enable = true;
+    profiles = {
+      myprofile = {
+        userChrome = ''
+    TabsToolbar .tabbrowser-tab { margin-top: 8px !important; ) 
+              '';
+        # settings = {
+        #   "general.smoothScroll" = true;
+        # };
+      };
+    };
+  };
+
+        gtk = {
+        enable = true;
+        iconTheme = {
+          name = "Adwaita-dark";
+          package = pkgs.gnome3.adwaita-icon-theme;
+        };
+        theme = {
+          name = "Adwaita-dark";
+          package = pkgs.gnome3.gnome_themes_standard;
+        };
+      };
+
+
+  programs.waybar = {
+
+    enable = true;
+
+    settings = [{
+            layer = "top";
+            position = "top";
+            height = 24;
+
+            modules-left = ["sway/workspaces" "sway/mode"];
+            modules-right = ["network" "battery" "clock" "tray"];
+          }
+          ];
+
+  };
 
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true ;
     config = {
+      bars = [];
       modifier="Mod4";
       terminal="kitty";
       menu="wofi --show=drun";
+      startup= [
+        { command = "waybar"; }
+        { command = "mako"; }
+        { command = "swaybg -i ~/wallpaper.jpeg -m fill"; }
+      ];
     };
     extraConfig = ''
 input "type:keyboard" {

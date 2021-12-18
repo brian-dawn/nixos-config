@@ -194,7 +194,7 @@ networking.firewall.enable = false;
       # android-studio
 
       # Browsers.
-      firefox
+      firefox-wayland
       # brave
 
       # Terminal emulators

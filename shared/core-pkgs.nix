@@ -2,7 +2,7 @@
 with pkgs; [
 
   # Fonts
-  nerdfonts
+  # nerdfonts
 
   tre-command
 
@@ -11,7 +11,7 @@ with pkgs; [
   nodePackages.pyright
   nodePackages.typescript-language-server
   rust-analyzer
-  gopls
+  # gopls
 
   # Python
   black
@@ -19,9 +19,9 @@ with pkgs; [
   #glibc
 
   # Fix python libstdc++ issues.
-  stdenv.cc.cc.lib
+  # stdenv.cc.cc.lib
   # xonsh
-  neofetch
+  # neofetch
 
   # julia
 
@@ -46,9 +46,9 @@ with pkgs; [
   # gh
 
   # Programming languages.
-  deno
+  # deno
   #dhall
-  go
+  # go
   #nim
   #nimlsp
   nodejs

@@ -2,16 +2,16 @@
 { pkgs, ... }:
 let
 
-  myPythonPackages = pythonPackages: with pythonPackages; [
-    ec2instanceconnectcli
+  # myPythonPackages = pythonPackages: with pythonPackages; [
+  #   ec2instanceconnectcli
 
-    # numpy
-    # pandas
-    #scikitlearn
-    # matplotlib
-    # pytorch
-    # ipython
-  ];
+  #   # numpy
+  #   # pandas
+  #   #scikitlearn
+  #   # matplotlib
+  #   # pytorch
+  #   # ipython
+  # ];
 in
 with pkgs; [
 
@@ -21,62 +21,61 @@ with pkgs; [
 
   # Cloud stuff
   awscli2
-  google-cloud-sdk
-  heroku
-  httpie
+  # google-cloud-sdk
+  # heroku
 
-  ffmpeg
-  nixpkgs-fmt
-  nixpkgs-review
+  # ffmpeg
+  # nixpkgs-fmt
+  # nixpkgs-review
 
   # Editors
   # vim
-  kakoune
-  #neovim
+  # kakoune
+  # neovim
 
   # Python
-  (python3.withPackages myPythonPackages)
+  # (python3.withPackages myPythonPackages)
 
-  postgresql
+  # postgresql
 
   # Programming languages.
   #babashka
-  clang
-  clangStdenv
+  #  clang
+  #  clangStdenv
   # clojure
   # crystal
   # nim
-  deno
-  dhall
-  dhall-lsp-server
-  elixir
+  # deno
+  # dhall
+  # dhall-lsp-server
+  # elixir
   # futhark
   # gcc
-  gccStdenv
-  ghc
+  # gccStdenv
+  # ghc
 
-  go
+  # go
 
   #idris2
   #janet
   #julia
   nodejs
-  octave
+  # octave
   # rustup
   poetry
 
   #zig
 
 
-  jdk11
-  ktlint
+  # jdk11
+  # ktlint
 
   # CLI tools.
   # pijul
 
   # Document generation
   # pandoc
-  mdbook
-  zola
-  hugo
+  # mdbook
+  # zola
+  # hugo
 ] ++ (import ./core-pkgs.nix pkgs)

@@ -135,7 +135,7 @@ in
       height = 24;
 
       modules-left = [ "sway/workspaces" "sway/mode" ];
-      modules-right = [ "network" "battery" "clock" "tray" ];
+      modules-right = [ "pulseaudio" "network" "battery" "clock" "tray" ];
     }];
 
   };
@@ -167,6 +167,10 @@ input "type:keyboard" {
 
 bindsym XF86MonBrightnessUp exec brillo -A 10 -q
 bindsym XF86MonBrightnessDown exec brillo -U 10 -q
+
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
 client.focused #555555 #555555 #ffffff #2e9ef4 #555555
 

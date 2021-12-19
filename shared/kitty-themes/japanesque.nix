@@ -1,5 +1,6 @@
 # License: MIT forked from https://github.com/dexpota/kitty-themes
 {
+  background_opacity = "0.75";
   background = "#1d1d1d";
   foreground = "#f7f6ec";
   cursor = "#eccf4f";

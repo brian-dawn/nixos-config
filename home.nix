@@ -22,6 +22,7 @@
 
   home.packages = with pkgs; [
     # Extra packages here.
+    brillo
     qutebrowser
     swaybg
     wofi
@@ -142,7 +143,14 @@
     extraConfig = ''
 input "type:keyboard" {
   xkb_options ctrl:nocaps
-}'';
+}
+
+bindsym XF86MonBrightnessUp exec brillo -A 10 -q
+bindsym XF86MonBrightnessDown exec brillo -U 10 -q
+      '';
+
+
+
   };
 
   #    gtk.enable = true; gtk.theme.name = "Numix"; gtk.iconTheme.name = "Numix";

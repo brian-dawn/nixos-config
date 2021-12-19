@@ -166,6 +166,7 @@
       # sway
       #  xorg.xeyes
       alsa-lib
+      pavucontrol
       pkgconfig
       udev
 

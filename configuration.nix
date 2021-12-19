@@ -135,15 +135,15 @@
   };
 
   # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Dawn";
-    extraGroups = [ "video" "wheel" "docker" ];
+    extraGroups = [ "video" "wheel" "docker" "audio" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -165,6 +165,9 @@
       #  obs-studio
       # sway
       #  xorg.xeyes
+      alsa-lib
+      pkgconfig
+      udev
 
       motion
 

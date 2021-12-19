@@ -105,7 +105,7 @@ networking.firewall.enable = false;
   # services.xserver.desktopManager.xfce.enable = true;
 
   services.xserver.displayManager.defaultSession = "sway";
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
   services.xserver.libinput.enable = true;
 
   # Configure keymap in X11

@@ -1,5 +1,11 @@
 { pkgs, lib, nixpkgs, ... }:
 
+###############
+# How to guide
+###############
+# WIFI
+#   sudo nmtui
+
 let
   oxalica-rust = fetchTarball "https://github.com/oxalica/rust-overlay/archive/master.tar.gz";
 in
@@ -66,6 +72,7 @@ in
 
   programs.kitty.settings.font_size = 9;
 
+
   # programs.vscode = {
   #   enable = true;
   #   package = pkgs.vscode;
@@ -91,19 +98,19 @@ in
   #   ];
   # };
 
-  programs.firefox = {
-    enable = true;
-    profiles = {
-      myprofile = {
-        userChrome = ''
-    TabsToolbar .tabbrowser-tab { margin-top: 8px !important; ) 
-              '';
-        # settings = {
-        #   "general.smoothScroll" = true;
-        # };
-      };
-    };
-  };
+#   programs.firefox = {
+#     enable = true;
+#     profiles = {
+#       myprofile = {
+#         userChrome = ''
+#     TabsToolbar .tabbrowser-tab { margin-top: 8px !important; ) 
+#               '';
+#         # settings = {
+#         #   "general.smoothScroll" = true;
+#         # };
+#       };
+#     };
+#   };
 
         gtk = {
         enable = true;
@@ -152,12 +159,18 @@ in
 
 hide_edge_borders smart
 
+smart_gaps on
+gaps inner 8
+
 input "type:keyboard" {
   xkb_options ctrl:nocaps
 }
 
 bindsym XF86MonBrightnessUp exec brillo -A 10 -q
 bindsym XF86MonBrightnessDown exec brillo -U 10 -q
+
+client.focused #555555 #555555 #ffffff #2e9ef4 #555555
+
 
       '';
 

@@ -36,6 +36,7 @@ in
     font-awesome # Needed for waybar icons.
 
     (rust-bin.stable.latest.default)
+    clang
   ];
 
   home.sessionVariables = {

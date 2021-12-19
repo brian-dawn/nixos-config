@@ -141,12 +141,16 @@
       ];
     };
     extraConfig = ''
+
+hide_edge_borders smart
+
 input "type:keyboard" {
   xkb_options ctrl:nocaps
 }
 
 bindsym XF86MonBrightnessUp exec brillo -A 10 -q
 bindsym XF86MonBrightnessDown exec brillo -U 10 -q
+
       '';
 
 
@@ -158,7 +162,11 @@ bindsym XF86MonBrightnessDown exec brillo -U 10 -q
 
     enable = true;
     extraConfig = ''
-      config.set('colors.webpage.preferred_color_scheme', 'dark')
+config.set('colors.webpage.preferred_color_scheme', 'dark')
+config.set('colors.webpage.darkmode.enabled', True)
+config.set('url.searchengines', {
+  "DEFAULT": "https://www.google.com/search?q={}"
+})
     '';
   };
 

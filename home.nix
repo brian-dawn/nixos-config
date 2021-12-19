@@ -17,7 +17,7 @@ in
       url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
     }))
 
-    (import oxalica-rust) 
+    (import oxalica-rust)
   ];
 
   imports = [
@@ -28,7 +28,7 @@ in
     ./shared/starship.nix
     ./shared/vim.nix
     ./shared/nvim.nix
-  #  ./shared/emacs.nix
+    #  ./shared/emacs.nix
   ];
 
   home.packages = with pkgs; [
@@ -98,31 +98,31 @@ in
   #   ];
   # };
 
-#   programs.firefox = {
-#     enable = true;
-#     profiles = {
-#       myprofile = {
-#         userChrome = ''
-#     TabsToolbar .tabbrowser-tab { margin-top: 8px !important; ) 
-#               '';
-#         # settings = {
-#         #   "general.smoothScroll" = true;
-#         # };
-#       };
-#     };
-#   };
+  #   programs.firefox = {
+  #     enable = true;
+  #     profiles = {
+  #       myprofile = {
+  #         userChrome = ''
+  #     TabsToolbar .tabbrowser-tab { margin-top: 8px !important; ) 
+  #               '';
+  #         # settings = {
+  #         #   "general.smoothScroll" = true;
+  #         # };
+  #       };
+  #     };
+  #   };
 
-        gtk = {
-        enable = true;
-        iconTheme = {
-          name = "Adwaita-dark";
-          package = pkgs.gnome3.adwaita-icon-theme;
-        };
-        theme = {
-          name = "Adwaita-dark";
-          package = pkgs.gnome3.gnome_themes_standard;
-        };
-      };
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome3.adwaita-icon-theme;
+    };
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome3.gnome_themes_standard;
+    };
+  };
 
 
   programs.waybar = {
@@ -130,26 +130,25 @@ in
     enable = true;
 
     settings = [{
-            layer = "top";
-            position = "top";
-            height = 24;
+      layer = "top";
+      position = "top";
+      height = 24;
 
-            modules-left = ["sway/workspaces" "sway/mode"];
-            modules-right = ["network" "battery" "clock" "tray"];
-          }
-          ];
+      modules-left = [ "sway/workspaces" "sway/mode" ];
+      modules-right = [ "network" "battery" "clock" "tray" ];
+    }];
 
   };
 
   wayland.windowManager.sway = {
     enable = true;
-    wrapperFeatures.gtk = true ;
+    wrapperFeatures.gtk = true;
     config = {
-      bars = [];
-      modifier="Mod4";
-      terminal="kitty";
-      menu="wofi --show=drun";
-      startup= [
+      bars = [ ];
+      modifier = "Mod4";
+      terminal = "kitty";
+      menu = "wofi --show=drun";
+      startup = [
         { command = "waybar"; }
         { command = "mako"; }
         { command = "swaybg -i ~/wallpaper.jpeg -m fill"; }
@@ -179,15 +178,15 @@ client.focused #555555 #555555 #ffffff #2e9ef4 #555555
   };
 
 
-  programs.qutebrowser= {
+  programs.qutebrowser = {
 
     enable = true;
     extraConfig = ''
-config.set('colors.webpage.preferred_color_scheme', 'dark')
-config.set('colors.webpage.darkmode.enabled', True)
-config.set('url.searchengines', {
-  "DEFAULT": "https://www.google.com/search?q={}"
-})
+      config.set('colors.webpage.preferred_color_scheme', 'dark')
+      config.set('colors.webpage.darkmode.enabled', True)
+      config.set('url.searchengines', {
+        "DEFAULT": "https://www.google.com/search?q={}"
+      })
     '';
   };
 
@@ -221,4 +220,5 @@ config.set('url.searchengines', {
   programs.home-manager = {
     enable = true;
     path = "…";
-  }; }
+  };
+}

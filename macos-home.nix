@@ -6,9 +6,9 @@
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    })) 
+    }))
     (self: super: {
-     kitty = pkgs.runCommandLocal "no-kitty" {} "mkdir $out";
+      kitty = pkgs.runCommandLocal "no-kitty" { } "mkdir $out";
       # kitty = pkgs.kitty.overrideAttrs (old: { NIX_CFLAGS_COMPILE = "-Wno-error -Wno-deprecated-declarations -Wnodeprecated-declarations"; });
     })
 
@@ -32,8 +32,8 @@
   #programs.kitty.settings.font_size = 13;
 
   home.packages = with pkgs; [
-     # macos specific packages here.
-     #neovim-nightly
+    # macos specific packages here.
+    #neovim-nightly
   ] ++ (import ./shared/core-pkgs.nix pkgs);
 
   home.sessionVariables = {

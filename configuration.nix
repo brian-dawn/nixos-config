@@ -31,7 +31,7 @@
   networking.useDHCP = false;
   networking.interfaces.enp0s25.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
-networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   #    fonts.fonts = with pkgs; [
   #      jetbrains-mono

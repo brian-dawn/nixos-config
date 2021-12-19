@@ -118,14 +118,18 @@ networking.firewall.enable = false;
 
   # Enable syncthing.
   services = {
-    syncthing = {
-      enable = true;
-      user = "brian";
-      dataDir = "/home/brian/Sync";
-      configDir = "/home/brian/.config/syncthing";
-    };
+    # syncthing = {
+    #   enable = true;
+    #   user = "brian";
+    #   dataDir = "/home/brian/Sync";
+    #   configDir = "/home/brian/.config/syncthing";
+    # };
 
     ipfs = {
+      enable = true;
+    };
+
+    tlp = {
       enable = true;
     };
   };

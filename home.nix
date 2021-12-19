@@ -153,6 +153,15 @@ bindsym XF86MonBrightnessDown exec brillo -U 10 -q
 
   };
 
+
+  programs.qutebrowser= {
+
+    enable = true;
+    extraConfig = ''
+      config.set('colors.webpage.preferred_color_scheme', 'dark')
+    '';
+  };
+
   #    gtk.enable = true; gtk.theme.name = "Numix"; gtk.iconTheme.name = "Numix";
   #    gtk.gtk3.bookmarks = [
   #      "file:///home/brian/Sync"

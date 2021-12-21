@@ -166,9 +166,13 @@
       # sway
       #  xorg.xeyes
       alsa-lib
+      libxkbcommon
       pavucontrol
       pkgconfig
       udev
+      wayland
+      wayland-scanner
+
 
       motion
 

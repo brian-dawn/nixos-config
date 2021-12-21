@@ -166,6 +166,11 @@ input "type:keyboard" {
   xkb_options ctrl:nocaps
 }
 
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
 bindsym XF86MonBrightnessUp exec brillo -A 10 -q
 bindsym XF86MonBrightnessDown exec brillo -U 10 -q
 

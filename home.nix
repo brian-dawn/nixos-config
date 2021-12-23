@@ -29,6 +29,7 @@ in
     ./shared/vim.nix
     ./shared/nvim.nix
     ./shared/waybar.nix
+    ./shared/qutebrowser.nix
     #  ./shared/emacs.nix
   ];
 
@@ -182,18 +183,6 @@ client.focused #555555 #555555 #ffffff #2e9ef4 #555555
 
     borderSize = 2;
     borderColor = "#83a598";
-  };
-
-  programs.qutebrowser = {
-
-    enable = true;
-    extraConfig = ''
-      config.set('colors.webpage.preferred_color_scheme', 'dark')
-      config.set('colors.webpage.darkmode.enabled', True)
-      config.set('url.searchengines', {
-        "DEFAULT": "https://www.google.com/search?q={}"
-      })
-    '';
   };
 
   #    gtk.enable = true; gtk.theme.name = "Numix"; gtk.iconTheme.name = "Numix";

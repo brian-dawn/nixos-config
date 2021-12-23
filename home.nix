@@ -28,6 +28,7 @@ in
     ./shared/starship.nix
     ./shared/vim.nix
     ./shared/nvim.nix
+    ./shared/waybar.nix
     #  ./shared/emacs.nix
   ];
 
@@ -125,21 +126,6 @@ in
     };
   };
 
-
-  programs.waybar = {
-
-    enable = true;
-
-    settings = [{
-      layer = "top";
-      position = "top";
-      height = 24;
-
-      modules-left = [ "sway/workspaces" "sway/mode" ];
-      modules-right = [ "pulseaudio" "network" "battery" "clock" "tray" ];
-    }];
-
-  };
 
   wayland.windowManager.sway = {
     enable = true;

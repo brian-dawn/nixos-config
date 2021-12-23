@@ -173,6 +173,16 @@ client.focused #555555 #555555 #ffffff #2e9ef4 #555555
 
   };
 
+  programs.mako = {
+    enable = true;
+
+
+    backgroundColor = "#1d2021";
+    textColor = "#ebdbb2";
+
+    borderSize = 2;
+    borderColor = "#83a598";
+  };
 
   programs.qutebrowser = {
 

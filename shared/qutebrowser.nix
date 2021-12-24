@@ -4,11 +4,23 @@
 
     enable = true;
     extraConfig = ''
-config.set('colors.webpage.preferred_color_scheme', 'dark')
-config.set('colors.webpage.darkmode.enabled', True)
+# config.set('colors.webpage.preferred_color_scheme', 'dark')
+# config.set('colors.webpage.darkmode.enabled', True)
+# config.set('colors.webpage.darkmode.grayscale.all', True)
+# config.set('colors.webpage.darkmode.grayscale.images', 1.0)
+# config.set('colors.webpage.darkmode.algorithm', "lightness-hsl")
+# # config.set('colors.webpage.darkmode.algorithm', "lightness-hsl")
+
 config.set('url.searchengines', {
   "DEFAULT": "https://www.google.com/search?q={}"
 })
+
+
+c.colors.webpage.preferred_color_scheme = 'dark'
+c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.grayscale.all =  True
+c.colors.webpage.darkmode.grayscale.images = 1.0
+c.colors.webpage.darkmode.algorithm =  "lightness-hsl"
 
 
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
@@ -290,6 +302,18 @@ c.colors.tabs.selected.even.bg = base05
 # Background color for webpages if unset (or empty to use the theme's
 # color).
 # c.colors.webpage.bg = base00
+
+
+#c.colors.webpage.prefers_color_scheme_dark = True
+c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.algorithm = 'lightness-hsl'
+c.colors.webpage.darkmode.contrast = -.022
+c.colors.webpage.darkmode.threshold.text = 150
+c.colors.webpage.darkmode.threshold.background = 100
+c.colors.webpage.darkmode.policy.images = 'always'
+c.colors.webpage.darkmode.grayscale.images = 0.999
+c.colors.webpage.darkmode.grayscale.all =  True
+
     '';
   };
 }

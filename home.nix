@@ -46,6 +46,9 @@ in
     (rust-bin.stable.latest.default)
     cargo-watch
     clang
+
+    pyright
+    python310
   ];
 
   home.sessionVariables = {

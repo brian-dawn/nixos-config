@@ -8,13 +8,14 @@
       nvim-compe
       nvim-treesitter
 
+      telescope-nvim
+
       sensible
       vim-nix
       vim-surround
       zig-vim
       rust-vim
       vim-surround
-      fzf-vim
       dhall-vim
       vim-toml
 
@@ -29,6 +30,16 @@
       set expandtab
       syntax on
 
+      " Set leader to space
+      nnoremap <SPACE> <Nop>
+      let mapleader=" "
+
+      " Find files using Telescope command-line sugar.
+      nnoremap <leader>ff <cmd>Telescope find_files<cr>
+      nnoremap <silent> <c-p> <cmd>Telescope find_files<cr>
+      nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+      nnoremap <leader>fb <cmd>Telescope buffers<cr>
+      nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
       " Turn on autocomplete
       set completeopt=menuone,noselect
@@ -126,10 +137,8 @@
       let g:limelight_conceal_guifg = 'DarkGray'
       let g:limelight_conceal_guifg = '#777777'
 
-      " Open files in horizontal split
-      nnoremap <silent> <c-p> :call fzf#run({
-      \   'down': '40%',
-      \   'sink': 'botright split' })<CR>
+
     '';
   };
 }
+

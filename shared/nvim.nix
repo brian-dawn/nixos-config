@@ -5,9 +5,16 @@
     plugins = with pkgs.vimPlugins; [
 
       nvim-lspconfig
-      nvim-compe
       nvim-treesitter
+      lsp-status-nvim
 
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      nvim-cmp
+
+      lsp_signature-nvim
       telescope-nvim
 
       sensible
@@ -41,31 +48,62 @@
       nnoremap <leader>fb <cmd>Telescope buffers<cr>
       nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-      " Turn on autocomplete
-      set completeopt=menuone,noselect
 
-      let g:compe = {}
-      let g:compe.enabled = v:true
-      let g:compe.autocomplete = v:true
-      let g:compe.debug = v:false
-      let g:compe.min_length = 1
-      let g:compe.preselect = 'enable'
-      let g:compe.throttle_time = 80
-      let g:compe.source_timeout = 200
-      let g:compe.incomplete_delay = 400
-      let g:compe.max_abbr_width = 100
-      let g:compe.max_kind_width = 100
-      let g:compe.max_menu_width = 100
-      let g:compe.documentation = v:true
+      set completeopt=menu,menuone,noselect
+    
+      lua <<EOF
+        -- Setup nvim-cmp.
+        local cmp = require'cmp'
       
-      let g:compe.source = {}
-      let g:compe.source.path = v:true
-      let g:compe.source.buffer = v:true
-      let g:compe.source.calc = v:true
-      let g:compe.source.nvim_lsp = v:true
-      let g:compe.source.nvim_lua = v:true
-      let g:compe.source.vsnip = v:true
-      let g:compe.source.ultisnips = v:true
+        cmp.setup({
+          snippet = {
+            -- REQUIRED - you must specify a snippet engine
+            expand = function(args)
+              vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+              -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+              -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+              -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            end,
+          },
+          mapping = {
+            ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+            ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+            ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+            ['<C-e>'] = cmp.mapping({
+              i = cmp.mapping.abort(),
+              c = cmp.mapping.close(),
+            }),
+            ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          },
+          sources = cmp.config.sources({
+            { name = 'nvim_lsp' },
+            { name = 'vsnip' }, -- For vsnip users.
+            -- { name = 'luasnip' }, -- For luasnip users.
+            -- { name = 'ultisnips' }, -- For ultisnips users.
+            -- { name = 'snippy' }, -- For snippy users.
+          }, {
+            { name = 'buffer' },
+          })
+        })
+      
+        -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+        cmp.setup.cmdline('/', {
+          sources = {
+            { name = 'buffer' }
+          }
+        })
+      
+        -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+        cmp.setup.cmdline(':', {
+          sources = cmp.config.sources({
+            { name = 'path' }
+          }, {
+            { name = 'cmdline' }
+          })
+        })
+      EOF
+
 
       " LSP 
       lua << EOF
@@ -137,6 +175,28 @@
       let g:limelight_conceal_guifg = 'DarkGray'
       let g:limelight_conceal_guifg = '#777777'
 
+      lua <<EOF
+        local lsp_status = require('lsp-status')
+        lsp_status.register_progress()
+        
+        local lspconfig = require('lspconfig')
+      EOF
+
+      function! LspStatus() abort
+         if luaeval('#vim.lsp.buf_get_clients() > 0')
+           return luaeval("require('lsp-status').status()")
+         endif
+
+        return ' '
+      endfunction
+
+      set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+      set statusline+=%{LspStatus()}
+        
+
+      lua <<EOF
+        require "lsp_signature".setup()
+      EOF
 
     '';
   };

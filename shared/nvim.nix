@@ -14,6 +14,8 @@
       cmp-cmdline
       nvim-cmp
 
+      vim-commentary
+
       lsp_signature-nvim
       telescope-nvim
 

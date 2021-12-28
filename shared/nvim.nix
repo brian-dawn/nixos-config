@@ -11,6 +11,9 @@
       # aurora # Color themes based on treesitter.
       gruvbox-nvim
 
+      nvim-web-devicons
+      nvim-tree-lua
+
       cmp-nvim-lsp
       cmp-buffer
       cmp-path
@@ -221,6 +224,14 @@
         
       EOF
 
+
+      " Tree Mode
+      lua <<EOF
+        -- following options are the default
+        -- each of these are documented in `:help nvim-tree.OPTION_NAME`
+        require'nvim-tree'.setup({})
+
+      EOF
     '';
   };
 }

@@ -19,6 +19,7 @@
 
       vim-commentary
       auto-pairs
+      hop-nvim
 
       lsp_signature-nvim
       telescope-nvim
@@ -50,6 +51,15 @@
       " Set leader to space
       nnoremap <SPACE> <Nop>
       let mapleader=" "
+
+      " Enable easymotion
+      lua <<EOF
+        require'hop'.setup()
+      EOF
+      nnoremap <leader>w <cmd>HopWord<cr>
+      nnoremap <leader>k <cmd>HopLineBC<cr>
+      nnoremap <leader>j <cmd>HopLineAC<cr>
+
 
       " Find files using Telescope command-line sugar.
       nnoremap <leader>ff <cmd>Telescope find_files<cr>

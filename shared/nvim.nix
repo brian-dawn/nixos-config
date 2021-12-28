@@ -8,7 +8,7 @@
       nvim-treesitter
       lsp-status-nvim
 
-      aurora # Color themes based on treesitter.
+      # aurora # Color themes based on treesitter.
       gruvbox-nvim
 
       cmp-nvim-lsp

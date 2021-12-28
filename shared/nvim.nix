@@ -8,6 +8,9 @@
       nvim-treesitter
       lsp-status-nvim
 
+      aurora # Color themes based on treesitter.
+      gruvbox-nvim
+
       cmp-nvim-lsp
       cmp-buffer
       cmp-path
@@ -15,6 +18,7 @@
       nvim-cmp
 
       vim-commentary
+      auto-pairs
 
       lsp_signature-nvim
       telescope-nvim
@@ -38,6 +42,10 @@
       set shiftwidth=4
       set expandtab
       syntax on
+
+      " 24bit colors
+      set termguicolors
+      colorscheme gruvbox
 
       " Set leader to space
       nnoremap <SPACE> <Nop>

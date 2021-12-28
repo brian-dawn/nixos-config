@@ -42,7 +42,7 @@
 
     ];
     extraConfig = builtins.readFile ./nvim/init.vim +
-    ''
+      ''
 
       "
       " Activate limelight when we enter :Goyo
@@ -72,12 +72,12 @@
         require'nvim-tree'.setup({})
 
       EOF
-    '' 
-    + builtins.readFile ./nvim/hop.vim
-    + builtins.readFile ./nvim/telescope.vim
-    + builtins.readFile ./nvim/cmp.vim
-    + builtins.readFile ./nvim/lsp.vim
-    + builtins.readFile ./nvim/lsp-status.vim
+    ''
+      + builtins.readFile ./nvim/hop.vim
+      + builtins.readFile ./nvim/telescope.vim
+      + builtins.readFile ./nvim/cmp.vim
+      + builtins.readFile ./nvim/lsp.vim
+      + builtins.readFile ./nvim/lsp-status.vim
     ;
   };
 }

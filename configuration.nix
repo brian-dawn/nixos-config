@@ -33,30 +33,30 @@
   networking.interfaces.wlp4s0.useDHCP = true;
   networking.firewall.enable = false;
 
-  #    fonts.fonts = with pkgs; [
-  #      jetbrains-mono
-  #      noto-fonts
-  #      noto-fonts-cjk
-  #      noto-fonts-emoji
-  #      liberation_ttf
+  fonts.fonts = with pkgs; [
+    jetbrains-mono
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
 
-  #      # Japanese fonts.
-  #      ipafont
-  #      kochi-substitute
+    # Japanese fonts.
+    ipafont
+    kochi-substitute
 
-  #      mplus-outline-fonts
-  #      dina-font
-  #      fira-code
-  #      proggyfonts
-  #      (nerdfonts.override {
-  #        fonts = [
-  #          "FiraCode"
-  #          "DroidSansMono"
-  #          "SourceCodePro"
-  #          "Inconsolata"
-  #        ];
-  #      })
-  #    ];
+    # mplus-outline-fonts
+    # dina-font
+    # fira-code
+    # proggyfonts
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        # "DroidSansMono"
+        # "SourceCodePro"
+        # "Inconsolata"
+      ];
+    })
+  ];
 
   #    fonts.fontconfig.defaultFonts = {
   #      monospace = [

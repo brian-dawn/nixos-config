@@ -6,6 +6,8 @@ with pkgs; [
 
   tre-command
 
+  sqlx-cli
+
   nodePackages.prettier
   # Language server stuff
   nodePackages.pyright

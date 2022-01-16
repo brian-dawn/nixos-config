@@ -125,9 +125,9 @@
     #   configDir = "/home/brian/.config/syncthing";
     # };
 
-    ipfs = {
-      enable = true;
-    };
+    # ipfs = {
+    #   enable = true;
+    # };
 
     tlp = {
       enable = true;

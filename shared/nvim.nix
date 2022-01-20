@@ -12,7 +12,6 @@
       gruvbox-nvim
 
       nvim-web-devicons
-      nvim-tree-lua
 
       cmp-nvim-lsp
       cmp-buffer
@@ -65,13 +64,6 @@
       EOF
 
 
-      " Tree Mode
-      lua <<EOF
-        -- following options are the default
-        -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-        require'nvim-tree'.setup({})
-
-      EOF
     ''
       + builtins.readFile ./nvim/hop.vim
       + builtins.readFile ./nvim/telescope.vim

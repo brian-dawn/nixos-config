@@ -13,9 +13,9 @@ in
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
+    # (import (builtins.fetchTarball {
+    #   url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    # }))
 
     (import oxalica-rust)
   ];

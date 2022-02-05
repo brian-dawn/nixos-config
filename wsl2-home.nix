@@ -28,7 +28,9 @@ in
 
   home.packages = with pkgs; [
     # WSL2 specific packages here.
-    (rust-bin.stable.latest.default)
+    (rust-bin.stable.latest.default.override {
+        extensions = [ "rust-src" "rustfmt"];
+    })
     # (rust-bin.selectLatestNightlyWith (toolchain:
     #     toolchain.default.override {
     #       extensions = [ "rust-analyzer" "rust-src" "rustfmt" ];

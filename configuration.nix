@@ -118,12 +118,12 @@
 
   # Enable syncthing.
   services = {
-    # syncthing = {
-    #   enable = true;
-    #   user = "brian";
-    #   dataDir = "/home/brian/Sync";
-    #   configDir = "/home/brian/.config/syncthing";
-    # };
+    syncthing = {
+      enable = true;
+      user = "brian";
+      dataDir = "/home/brian/Sync";
+      configDir = "/home/brian/.config/syncthing";
+    };
 
     # ipfs = {
     #   enable = true;
@@ -242,6 +242,7 @@
 
   # services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
 
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -259,6 +260,7 @@
       swaylock
       swayidle
       wl-clipboard
+      kanshi # auto randr
       mako # notification daemon
       alacritty # Alacritty is the default terminal in the config
     ];
@@ -266,6 +268,15 @@
 
   # or
   programs.light.enable = true;
+
+  location.latitude = 44.986656;
+  location.longitude = -93.258133;
+  services.redshift = {
+    enable = true;
+    temperature.day = 5500;
+    temperature.night = 2300;
+    package = pkgs.redshift-wlr; # Wayland
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

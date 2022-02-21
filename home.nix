@@ -147,6 +147,10 @@ in
     };
     extraConfig = ''
 
+# Lock the screen after 900 seconds.
+# TODO: I don't think this works.
+exec swayidle -w timeout 900 'swaylock --effect-blur 7x5 --fade-in .2 --screenshots'
+
 hide_edge_borders smart
 
 smart_gaps on

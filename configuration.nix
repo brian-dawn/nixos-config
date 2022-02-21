@@ -257,7 +257,7 @@
     enable = true;
     wrapperFeatures.gtk = true; # so that gtk works properly
     extraPackages = with pkgs; [
-      swaylock
+      swaylock-effects
       swayidle
       wl-clipboard
       kanshi # auto randr

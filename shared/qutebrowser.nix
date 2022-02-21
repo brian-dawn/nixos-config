@@ -16,11 +16,11 @@
       })
 
 
-      c.colors.webpage.preferred_color_scheme = 'dark'
-      c.colors.webpage.darkmode.enabled = True
-      c.colors.webpage.darkmode.grayscale.all =  True
-      c.colors.webpage.darkmode.grayscale.images = 1.0
-      c.colors.webpage.darkmode.algorithm =  "lightness-hsl"
+      # c.colors.webpage.preferred_color_scheme = 'dark'
+      # c.colors.webpage.darkmode.enabled = True
+      # c.colors.webpage.darkmode.grayscale.all =  True
+      # c.colors.webpage.darkmode.grayscale.images = 1.0
+      # c.colors.webpage.darkmode.algorithm =  "lightness-hsl"
 
 
       # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
@@ -305,12 +305,12 @@
 
 
       #c.colors.webpage.prefers_color_scheme_dark = True
-      c.colors.webpage.darkmode.enabled = True
-      c.colors.webpage.darkmode.algorithm = 'lightness-hsl'
-      c.colors.webpage.darkmode.contrast = -.022
-      c.colors.webpage.darkmode.threshold.text = 150
-      c.colors.webpage.darkmode.threshold.background = 100
-      c.colors.webpage.darkmode.policy.images = 'always'
+      # c.colors.webpage.darkmode.enabled = True
+      # c.colors.webpage.darkmode.algorithm = 'lightness-hsl'
+      # c.colors.webpage.darkmode.contrast = -.022
+      # c.colors.webpage.darkmode.threshold.text = 150
+      # c.colors.webpage.darkmode.threshold.background = 100
+      # c.colors.webpage.darkmode.policy.images = 'always'
       c.colors.webpage.darkmode.grayscale.images = 0.999
       c.colors.webpage.darkmode.grayscale.all =  True
 

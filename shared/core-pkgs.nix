@@ -43,6 +43,7 @@ with pkgs; [
   # nixpkgs-fmt
 
   postgresql
+  pgcli # pg shell with auto complete.
 
   # Github cli tool.
   # gh

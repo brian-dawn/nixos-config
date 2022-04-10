@@ -116,6 +116,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
+
   # Enable syncthing.
   services = {
     syncthing = {
@@ -125,9 +129,9 @@
       configDir = "/home/brian/.config/syncthing";
     };
 
-    # ipfs = {
-    #   enable = true;
-    # };
+    ipfs = {
+      enable = true;
+    };
 
     tlp = {
       enable = true;
@@ -269,13 +273,22 @@
   # or
   programs.light.enable = true;
 
+  services.localtime.enable = true;
+
   location.latitude = 44.986656;
   location.longitude = -93.258133;
-  services.redshift = {
-    enable = true;
-    temperature.day = 5500;
-    temperature.night = 2300;
-    package = pkgs.redshift-wlr; # Wayland
+  location.provider = "manual";
+  # services.redshift = {
+  #   enable = false;
+  #   temperature.day = 5500;
+  #   temperature.night = 3700;
+  #   package = pkgs.redshift-wlr; # Wayland
+  # };
+
+  services.geoclue2.enable = true;
+  services.geoclue2.appConfig.redshift = {
+    isAllowed = true;
+    isSystem = true;
   };
 
   # Enable the OpenSSH daemon.

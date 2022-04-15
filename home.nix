@@ -42,6 +42,7 @@ in
     mpd
     pavucontrol
     font-awesome # Needed for waybar icons.
+    wezterm
 
     (rust-bin.stable.latest.default)
     cargo-watch

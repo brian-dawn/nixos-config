@@ -22,7 +22,7 @@
     ./shared/kitty.nix
     ./shared/starship.nix
     ./shared/vim.nix
-    # ./shared/nvim.nix
+    ./shared/nvim.nix
     ./shared/bash.nix
     # ./shared/emacs.nix
   ];

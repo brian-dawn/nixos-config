@@ -9,6 +9,7 @@
       lsp-status-nvim
 
       # aurora # Color themes based on treesitter.
+      lush-nvim
       gruvbox-nvim
 
       nvim-web-devicons

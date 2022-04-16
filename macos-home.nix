@@ -23,6 +23,7 @@
     ./shared/starship.nix
     ./shared/vim.nix
     ./shared/nvim.nix
+    ./shared/wezterm.nix
     ./shared/bash.nix
     # ./shared/emacs.nix
   ];

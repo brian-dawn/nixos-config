@@ -29,6 +29,7 @@ in
     ./shared/vim.nix
     ./shared/nvim.nix
     ./shared/waybar.nix
+    ./shared/wezterm.nix
     ./shared/qutebrowser.nix
     #  ./shared/emacs.nix
   ];
@@ -127,7 +128,7 @@ in
     };
     theme = {
       name = "Adwaita-dark";
-      package = pkgs.gnome3.gnome_themes_standard;
+      package = pkgs.gnome3.gnome-themes-extra;
     };
   };
 

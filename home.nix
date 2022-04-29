@@ -139,7 +139,7 @@ in
     config = {
       bars = [ ];
       modifier = "Mod4";
-      terminal = "kitty";
+      terminal = "wezterm";
       menu = "wofi --show=drun";
       startup = [
         { command = "waybar"; }

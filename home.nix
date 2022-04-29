@@ -156,7 +156,7 @@ exec swayidle -w timeout 900 'swaylock --effect-blur 7x5 --fade-in .2 --screensh
 hide_edge_borders smart
 
 smart_gaps on
-gaps inner 64
+gaps inner 16
 
 input "type:keyboard" {
   xkb_options ctrl:nocaps

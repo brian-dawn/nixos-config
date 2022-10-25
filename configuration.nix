@@ -108,6 +108,10 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.libinput.enable = true;
 
+
+  # services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+
   # Configure keymap in X11
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "ctrl:nocaps";
@@ -122,20 +126,20 @@
 
   # Enable syncthing.
   services = {
-    syncthing = {
-      enable = true;
-      user = "brian";
-      dataDir = "/home/brian/Sync";
-      configDir = "/home/brian/.config/syncthing";
-    };
+    # syncthing = {
+    #   enable = true;
+    #   user = "brian";
+    #   dataDir = "/home/brian/Sync";
+    #   configDir = "/home/brian/.config/syncthing";
+    # };
 
-    ipfs = {
-      enable = true;
-    };
+    # ipfs = {
+    #   enable = true;
+    # };
 
-    tlp = {
-      enable = true;
-    };
+    # tlp = {
+    #   enable = true;
+    # };
   };
 
   # Enable sound.
@@ -157,6 +161,7 @@
 
       home-manager
       #networkmanager
+      gparted
 
       # Gnome stuff.
       #  numix-gtk-theme

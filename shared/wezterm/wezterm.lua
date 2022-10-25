@@ -4,7 +4,7 @@ local wezterm = require 'wezterm';
 return {
   color_scheme = "Gruvbox Dark",
   hide_tab_bar_if_only_one_tab = true,
-  font = wezterm.font("Fira Code"),
+  font = wezterm.font("FiraCode Nerd Font Mono"),
   -- debug_key_events=true,
   keys = {
     -- Turn off the default CMD-m Hide action on macOS by making it
